@@ -3,16 +3,26 @@
     margin: 0;
     box-sizing: border-box;
 }
+header{
+    height: 55px;
+    width: 100%;
+    background-color: black;
+    position: sticky;
+    top:0;
+    z-index: 10;
+}
 .section-1{
     height: 110px;
-    width: 100%;
+    width: 95%;
+    margin: auto;
 
 }
 .content{
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-wrap: wrap;
+    
 }
 .paragraph{
     width: 275px;
@@ -22,7 +32,7 @@
     justify-content: center;
 }
 .content button{
-    padding: 10px 70px;
+    padding: 15px 75px;
     background-color: white;
     border: 1px solid black;
 }
@@ -38,18 +48,72 @@
 .paragraph{
     padding: 10px 39px 0px 0px;
 }
+.section-2{
+    
+    width: 94%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+
+}
+.content-2{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-left: 20px;
+
+}
+.content-2 div {
+    flex: 1 1 370px;          
+}
+.con2-imgdiv{
+   height: 100%;
+   width: 30%;
+}
+
+.content-2 img {
+    max-width: 95%;         
+    height: auto;             
+    display: block;
+    align-items:center ;
+    justify-content: center;
+    margin-top: 20px;       
+    object-fit: cover; 
+    padding-left: 20px;   
+  }
+  .content-2 p {
+    margin-top: 20px;
+  }
+
 @media (max-width: 1024px) {
+    
     .hiroshi  {
       width: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-top:50px;
+      margin-top: 45px;
+      
     }
-    .button{width: 100%;
+    .button{
+        width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
     }
-    .paragraph{text-align: center;padding: 0;}
+    .paragraph{text-align: center;padding: 0;width: 100%;}
+    .both{
+        width: 100%;
+    }
+    .section-2{
+       margin-top:110px ;
+    }
+  }
+  @media (max-width: 826px) {
+        .content-2 img {
+            padding: 0;
+        }
   }
