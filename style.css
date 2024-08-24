@@ -1,0 +1,55 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.section-1{
+    height: 110px;
+    width: 100%;
+
+}
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.paragraph{
+    width: 275px;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.content button{
+    padding: 10px 70px;
+    background-color: white;
+    border: 1px solid black;
+}
+.hiroshi{
+    width: 500px;
+}
+.both{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.paragraph{
+    padding: 10px 39px 0px 0px;
+}
+@media (max-width: 1024px) {
+    .hiroshi  {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top:50px;
+    }
+    .button{width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .paragraph{text-align: center;padding: 0;}
+  }
