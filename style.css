@@ -55,6 +55,7 @@ header{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
   
 
 }
@@ -63,29 +64,28 @@ header{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding-left: 20px;
+    padding-left:18px;
+    margin-bottom: 60px;
 
 }
 .content-2 div {
     flex: 1 1 370px;          
 }
-.con2-imgdiv{
-   height: 100%;
-   width: 30%;
-}
-
 .content-2 img {
     max-width: 95%;         
     height: auto;             
-    display: block;
+    
     align-items:center ;
     justify-content: center;
     margin-top: 20px;       
     object-fit: cover; 
     padding-left: 20px;   
+    
   }
   .content-2 p {
     margin-top: 20px;
+    padding-left: 20px;
+    
   }
 
 @media (max-width: 1024px) {
@@ -111,9 +111,22 @@ header{
     .section-2{
        margin-top:110px ;
     }
-  }
+    .content-2 p {
+    padding-left: 18px;
+    margin-bottom: 40px;
+    
+    }
+    .content-2{
+        margin-bottom: 0px;
+        padding-left: 18px;
+    }
+}
+    
   @media (max-width: 826px) {
         .content-2 img {
             padding: 0;
         }
+        .content-2 p {
+            padding-left: 0px;
+            }
   }
