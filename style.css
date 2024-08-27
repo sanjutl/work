@@ -230,8 +230,13 @@ header{
         }
         .content-3a{
             margin-top: 30px;
+            padding: 0;
         }
         .content-3{
-            padding-left: 30px;
+            padding-left: 40px;
+            padding-bottom: 0;
+        }
+        .para-3{
+            margin: 30px 0px;
         }
   }
