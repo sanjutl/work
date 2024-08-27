@@ -1,58 +1,69 @@
-const carousel = document.querySelector('.carousel');
-const images = document.querySelectorAll('.carousel img');
+const carouselWrapper = document.querySelector('.carousel-wrapper');
+const carouselItems = document.querySelectorAll('.carousel-item');
 const prevBtn = document.querySelector('.prev-btn');
 const nextBtn = document.querySelector('.next-btn');
+const indicators = document.querySelectorAll('.indicator');
 
-let index = 0;
-const totalImages = images.length;
-const intervalTime = 3000;  // Time interval in milliseconds (3 seconds)
-let autoPlay;
+let currentIndex = 0;
+let autoSlideInterval;
 
-// Function to show the image at the current index
-function showImageAtIndex() {
-    carousel.style.transform = `translateX(-${index * 100}%)`;
+function updateCarouselPosition() {
+  const itemWidth = carouselItems[0].clientWidth;
+  const newPosition = -currentIndex * itemWidth;
+  carouselWrapper.style.transform = `translateX(${newPosition}px)`;
+  
+  // Update active indicator
+  indicators.forEach(indicator => indicator.classList.remove('active'));
+  indicators[currentIndex].classList.add('active');
 }
 
-// Function to go to the next image (slide left to right)
-function nextImage() {
-    index = (index - 1 + totalImages) % totalImages;
-    showImageAtIndex();
+function showNextItem() {
+  currentIndex = (currentIndex + 1) % carouselItems.length;
+  updateCarouselPosition();
 }
 
-// Autoplay functionality (sliding left to right by default)
-function startAutoPlay() {
-    autoPlay = setInterval(nextImage, intervalTime); // Automatically slide left to right
+function showPrevItem() {
+  currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+  updateCarouselPosition();
 }
 
-// Stop autoplay when user interacts (e.g., clicks a button)
-function stopAutoPlay() {
-    clearInterval(autoPlay);
+function jumpToSlide(index) {
+  currentIndex = index;
+  updateCarouselPosition();
 }
 
-// Start autoplay when the page loads
-startAutoPlay();
+nextBtn.addEventListener('click', showNextItem);
+prevBtn.addEventListener('click', showPrevItem);
 
-// Event listeners for buttons
-nextBtn.addEventListener('click', () => {
-    stopAutoPlay();
-    index = (index - 1 + totalImages) % totalImages;
-    showImageAtIndex();
-    startAutoPlay(); // Restart autoplay after manual navigation
+indicators.forEach((indicator, index) => {
+  indicator.addEventListener('click', () => jumpToSlide(index));
 });
 
-prevBtn.addEventListener('click', () => {
-    stopAutoPlay();
-    index = (index + 1) % totalImages;
-    showImageAtIndex();
-    startAutoPlay(); // Restart autoplay after manual navigation
+// Auto-slide functionality
+function startAutoSlide() {
+  autoSlideInterval = setInterval(showNextItem, 3000); // Slide every 3 seconds
+}
+
+function stopAutoSlide() {
+  clearInterval(autoSlideInterval);
+}
+
+carouselWrapper.addEventListener('mouseover', stopAutoSlide);
+carouselWrapper.addEventListener('mouseout', startAutoSlide);
+
+startAutoSlide(); // Start auto-slide on page load
+
+// Optional: Add swipe functionality for touch devices
+let startX;
+carouselWrapper.addEventListener('touchstart', (e) => {
+  startX = e.touches[0].clientX;
 });
 
-
-
-document.addEventListener("DOMContentLoaded", function() {
-    // Simulate content loading with a delay
-    let loader=document.getElementById("load");
-    setTimeout(function() {
-        loader.classList.add('hidden');
-    },3000); // 3-second delay to simulate loading
+carouselWrapper.addEventListener('touchend', (e) => {
+  const endX = e.changedTouches[0].clientX;
+  if (startX > endX + 50) { // Swipe left
+    showNextItem();
+  } else if (startX < endX - 50) { // Swipe right
+    showPrevItem();
+  }
 });
