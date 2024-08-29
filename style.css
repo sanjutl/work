@@ -46,6 +46,7 @@ header{
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+   
 }
 .paragraph{
     padding: 10px 39px 0px 0px;
@@ -241,14 +242,18 @@ header{
     font-size: 12px;
     letter-spacing: 2px;
   }
-@media (max-width: 1024px) {
+@media (max-width: 1040px) {
+
+    .section-1{
+      height: 185px;
+    }
     
     .hiroshi  {
       width: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-top: 45px;
+      margin-top: 40px;
       
     }
     .button{
@@ -262,7 +267,7 @@ header{
         width: 100%;
     }
     .section-2{
-       margin-top:110px ;
+       margin-top:80px ;
     }
     .content-2 p {
     padding-left: 18px;
@@ -276,6 +281,9 @@ header{
 }
     
   @media (max-width: 826px) {
+    .section-1{
+      height: 185px;
+    }
         .content-2 img {
             padding: 0;
         }
