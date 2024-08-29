@@ -77,13 +77,13 @@ header{
 .content-2 img {
     max-width: 95%;         
     height: auto;             
-    transform: translateX(-50%);
+    transform: translateX(-100%);
     align-items:center ;
     justify-content: center;
     margin-top: 20px;       
     object-fit: cover; 
     padding-left: 20px;
-    transition: transform ease 0.5s;
+    transition: transform ease 1s;
     opacity: 0; 
     
   }

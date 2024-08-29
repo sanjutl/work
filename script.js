@@ -74,7 +74,7 @@ console.log(allDiv)
 let divOption={
   root:null,
   rootMargin:'0px',
-  threshold:0.5,
+  threshold:0.75,
 }
 let divObserver=new IntersectionObserver((entries)=>{
   entries.forEach((entry)=>{
