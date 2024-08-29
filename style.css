@@ -209,6 +209,22 @@ header{
     word-spacing: 3px;
     font-size: 32px;
   }
+  .section-5{
+    background-color: black;
+    display: flex; 
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .content-5{
+    color: white;
+    flex:1,1;
+    padding: 50px ;
+  }
+  .section-5 p{
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
 @media (max-width: 1024px) {
     
     .hiroshi  {
