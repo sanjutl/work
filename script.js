@@ -52,10 +52,10 @@ document.addEventListener('DOMContentLoaded', function() {
   
   
 });
-// const parentContainer=document.querySelector('.parent-container')
-// setTimeout(()=>{
-//   parentContainer.style.display="block"
-// },7500)
+const parentContainer=document.querySelector('.parent-container')
+setTimeout(()=>{
+  parentContainer.style.display="block"
+},7500)
 const mainContainer=document.querySelector('.container')
 setTimeout(()=>{
   mainContainer.style.display='none'
