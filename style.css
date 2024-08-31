@@ -14,7 +14,7 @@ header{
     z-index: 10;
 }
 .parent-container{
-  /* display:none; */
+   display:none; 
   overflow-x: hidden;
 }
 .container{
