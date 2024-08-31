@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const previous = document.querySelector('.left');
   const next = document.querySelector('.right');
   const mainContainer=document.querySelector('.container')
-
+ 
   let index = 1;
   let width = carouselSlides[0].clientWidth;
 
@@ -49,17 +49,13 @@ document.addEventListener('DOMContentLoaded', function() {
       }
   }
   autoSlide()
-  // mouse hover
-  mainContainer.addEventListener('mouseover',()=>{ 
-     clearInterval(deleteInterval)
-  })
-  mainContainer.addEventListener('mouseout',()=>{
-      autoSlide()
-  })
-  previous.addEventListener('click', previousSlide);
-  next.addEventListener('click', nextSlide);
+  
   
 });
+// const parentContainer=document.querySelector('.parent-container')
+// setTimeout(()=>{
+//   parentContainer.style.display="block"
+// },7500)
 const mainContainer=document.querySelector('.container')
 setTimeout(()=>{
   mainContainer.style.display='none'
@@ -86,3 +82,67 @@ allDiv.forEach((div)=>{
 })
 
 
+// page slide
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const pagecarouselRow = document.querySelector('.pagecarousel');
+  const pagecarouselSlides = document.getElementsByClassName('pagecarousel-items');
+  const previous = document.querySelector('.left');
+  const next = document.querySelector('.right');
+  const pagemainContainer=document.querySelector('.pagecontainer')
+ 
+  let pageindex = 1;
+  let width = pagecarouselSlides[0].clientWidth;
+
+  
+  pagecarouselRow.style.transform = 'translateX(' + (-width * pageindex) + 'px)';
+
+  
+  function lastSlide() {
+      if (pageindex <= 0) return;
+      pagecarouselRow.style.transition = 'transform 1s ease-in-out';
+      pageindex--;
+      pagecarouselRow.style.transform = 'translateX(' + (-width * pageindex) + 'px)';
+  }
+
+  
+  function forwardSlide() {
+      if (pageindex >= pagecarouselSlides.length - 1) return;
+      pagecarouselRow.style.transition = 'transform 1s ease-out';
+      pageindex++;
+      pagecarouselRow.style.transform = 'translateX(' + (-width * pageindex) + 'px)';
+  }
+
+ 
+  pagecarouselRow.addEventListener('transitionend', function() {
+      if (pagecarouselSlides[pageindex].id === 'pagefirst') {
+          pagecarouselRow.style.transition = 'none';
+          pageindex = pagecarouselSlides.length - pageindex;
+          pagecarouselRow.style.transform = 'translateX(' + (-width * pageindex) + 'px)';
+      }
+      if (pagecarouselSlides[pageindex].id === 'pagelast') {
+          pagecarouselRow.style.transition = 'none';
+          pageindex = pagecarouselSlides.length - 2;
+          pagecarouselRow.style.transform = 'translateX(' + (-width * pageindex) + 'px)';
+      }
+  });
+
+  function autoSliding(){
+      deleteInterval=setInterval(time,3000);
+      function time(){
+          forwardSlide()
+      }
+  }
+  autoSliding()
+  // mouse hover
+  pagemainContainer.addEventListener('mouseover',()=>{ 
+     clearInterval(deleteInterval)
+  })
+  pagemainContainer.addEventListener('mouseout',()=>{
+      autoSlide()
+  })
+  previous.addEventListener('click', lastSlide);
+  next.addEventListener('click', forwardSlide);
+  
+});
