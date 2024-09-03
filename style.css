@@ -300,52 +300,7 @@ header {
   flex: 1 1 340px;
   padding-left: 30px;
 }
-.mini-carousel-container {
-  width: 90%; 
-  overflow: hidden;
-  position: relative;
-  min-height: 400px;
-  padding-bottom:20px ;
-}
 
-.mini-carousel-wrapper {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-
-.mini-carousel-item {
-  min-width: 100%;
-  box-sizing: border-box;
-  transition: opacity 1s ease-in-out;
-  
-}
-
-.mini-samebutton {
-  position: absolute;
-  top: 97%;
-  transform: translateY(-50%);
-  padding: 10px;
-  cursor: pointer;
-  z-index: 10;
-  border: none;
-  height: 40px;
-  width: 40px;
-  background-color: transparent;
-  
-}
-.content-6a img{
-  object-fit: contain;
-  width: 100%;
-  max-height: 650px;
-}
-.mini-next-btn {
-  left: 94%;
- 
-}
-
-.mini-prev-btn {
-  right:3%;
-}
 @media (max-width: 1040px) {
   .section-1 {
     padding: 0;
@@ -440,10 +395,7 @@ header {
     width: 100%;
     margin: 0;
   }
-  .content-6a{
-    width: 100%;
-    padding: 10px;
-  }
+  
   .content-6{
     padding: 30px;
   }
