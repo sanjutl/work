@@ -142,3 +142,74 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  const carouselWrapper = document.querySelector('.mini-carousel-wrapper');
+  const carouselItems = document.querySelectorAll('.mini-carousel-item');
+  const prevBtn = document.querySelector('.prev-btn');
+  const nextBtn = document.querySelector('.next-btn');
+  const indicators = document.querySelectorAll('.indicator');
+  
+  let currentIndex = 0;
+  let autoSlideInterval;
+  
+  function updateCarouselPosition() {
+    const itemWidth = carouselItems[0].clientWidth;
+    const newPosition = -currentIndex * itemWidth;
+    carouselWrapper.style.transform = `translateX(${newPosition}px)`;
+    
+    
+    indicators.forEach(indicator => indicator.classList.remove('active'));
+    indicators[currentIndex].classList.add('active');
+  }
+  
+  function showNextItem() {
+    currentIndex = (currentIndex + 1) % carouselItems.length;
+    updateCarouselPosition();
+  }
+  
+  function showPrevItem() {
+    currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+    updateCarouselPosition();
+  }
+  
+  function jumpToSlide(index) {
+    currentIndex = index;
+    updateCarouselPosition();
+  }
+  
+  nextBtn.addEventListener('click', showNextItem);
+  prevBtn.addEventListener('click', showPrevItem);
+  
+  indicators.forEach((indicator, index) => {
+    indicator.addEventListener('click', () => jumpToSlide(index));
+  });
+  
+  // Auto-slide functionality
+  function startAutoSlide() {
+    autoSlideInterval = setInterval(showNextItem, 3000); // Slide every 3 seconds
+  }
+  
+  function stopAutoSlide() {
+    clearInterval(autoSlideInterval);
+  }
+  
+  carouselWrapper.addEventListener('mouseover', stopAutoSlide);
+  carouselWrapper.addEventListener('mouseout', startAutoSlide);
+  
+  startAutoSlide(); 
+  let startX;
+  carouselWrapper.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+  });
+  
+  carouselWrapper.addEventListener('touchend', (e) => {
+    const endX = e.changedTouches[0].clientX;
+    if (startX > endX + 50) { // Swipe left
+      showNextItem();
+    } else if (startX < endX - 50) { // Swipe right
+      showPrevItem();
+    }
+  });
+
+});
