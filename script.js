@@ -71,56 +71,74 @@ allDiv.forEach((div)=>{
 })
 
 
-  document.addEventListener('DOMContentLoaded', function() {
-    const pagecarouselRow = document.querySelector('.pagecarousel');
-    const pagecarouselSlides = document.getElementsByClassName('pagecarousel-items');
-    const previous = document.querySelector('.left');
-    const next = document.querySelector('.right');
-    const mainContainer=document.querySelector('.pagecontainer')
-   
-    let index = 1;
-    let width = pagecarouselSlides[0].clientWidth;
+
+document.addEventListener('DOMContentLoaded', function() {
+  const carouselWrapper = document.querySelector('.carousel-wrapper');
+  const carouselItems = document.querySelectorAll('.carousel-item');
+  const prevBtn = document.querySelector('.prev-btn');
+  const nextBtn = document.querySelector('.next-btn');
+  const indicators = document.querySelectorAll('.indicator');
   
-    
-    pagecarouselRow.style.transform = 'translateX(' + (-width * index) + 'px)';
+  let currentIndex = 0;
+  let autoSlideInterval;
   
+  function updateCarouselPosition() {
+    const itemWidth = carouselItems[0].clientWidth;
+    const newPosition = -currentIndex * itemWidth;
+    carouselWrapper.style.transform = `translateX(${newPosition}px)`;
     
-    function previousSlide() {
-        if (index <= 0) return;
-        pagecarouselRow.style.transition = 'transform 1s ease-in-out';
-        index--;
-        pagecarouselRow.style.transform = 'translateX(' + (-width * index) + 'px)';
-    }
-    function forwardSlide() {
-        if (index >= pagecarouselSlides.length - 1) return;
-        pagecarouselRow.style.transition = 'transform 1s ease-out';
-        index++;
-        pagecarouselRow.style.transform = 'translateX(' + (-width * index) + 'px)';
-    }
-   
-    pagecarouselRow.addEventListener('transitionend', function() {
-        if (pagecarouselSlides[index].id === 'pagefirst') {
-            pagecarouselRow.style.transition = 'none';
-            index = pagecarouselSlides.length - index;
-            pagecarouselRow.style.transform = 'translateX(' + (-width * index) + 'px)';
-        }
-        if (pagecarouselSlides[index].id === 'pagelast') {
-            pagecarouselRow.style.transition = 'none';
-            index = pagecarouselSlides.length - 2;
-            pagecarouselRow.style.transform = 'translateX(' + (-width * index) + 'px)';
-        }
-    });
+    
+    indicators.forEach(indicator => indicator.classList.remove('active'));
+    indicators[currentIndex].classList.add('active');
+  }
   
-    function autoSlide(){
-        deleteInterval=setInterval(time,1500);
-        function time(){
-            forwardSlide()
-        }
-    }
-    autoSlide()
-    
-    previous.addEventListener('click', previousSlide);
-    next.addEventListener('click', forwardSlide);
+  function showNextItem() {
+    currentIndex = (currentIndex + 1) % carouselItems.length;
+    updateCarouselPosition();
+  }
+  
+  function showPrevItem() {
+    currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+    updateCarouselPosition();
+  }
+  
+  function jumpToSlide(index) {
+    currentIndex = index;
+    updateCarouselPosition();
+  }
+  
+  nextBtn.addEventListener('click', showNextItem);
+  prevBtn.addEventListener('click', showPrevItem);
+  
+  indicators.forEach((indicator, index) => {
+    indicator.addEventListener('click', () => jumpToSlide(index));
   });
   
+  // Auto-slide functionality
+  function startAutoSlide() {
+    autoSlideInterval = setInterval(showNextItem, 3000); // Slide every 3 seconds
+  }
   
+  function stopAutoSlide() {
+    clearInterval(autoSlideInterval);
+  }
+  
+  carouselWrapper.addEventListener('mouseover', stopAutoSlide);
+  carouselWrapper.addEventListener('mouseout', startAutoSlide);
+  
+  startAutoSlide(); 
+  let startX;
+  carouselWrapper.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+  });
+  
+  carouselWrapper.addEventListener('touchend', (e) => {
+    const endX = e.changedTouches[0].clientX;
+    if (startX > endX + 50) { // Swipe left
+      showNextItem();
+    } else if (startX < endX - 50) { // Swipe right
+      showPrevItem();
+    }
+  });
+
+});
