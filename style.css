@@ -300,7 +300,52 @@ header {
   flex: 1 1 340px;
   padding-left: 30px;
 }
+.mini-carousel-container {
+  width: 100%; 
+  overflow: hidden;
+  position: relative;
+  min-height: 400px;
+  padding-bottom:20px ;
+}
 
+.mini-carousel-wrapper {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.mini-carousel-item {
+  min-width: 100%;
+  box-sizing: border-box;
+  transition: opacity 1s ease-in-out;
+  
+}
+
+.mini-samebutton {
+  position: absolute;
+  top: 100%;
+  transform: translateY(-60%);
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+  border: none;
+  height: 40px;
+  width: 40px;
+  background-color: transparent;
+  
+}
+.content-6a img{
+  object-fit: contain;
+  width: 90%;
+  max-height: 650px;
+}
+.mini-next-btn {
+  left: 85%;
+ 
+}
+
+.mini-prev-btn {
+  right:11%;
+}
 @media (max-width: 1040px) {
   .section-1 {
     padding: 0;
@@ -357,7 +402,7 @@ header {
     padding: 0px;
   }
   .section-6{
-    padding: 30px;
+    padding: 0px;
   }
   .para-3 p {
     font-size: 0.9em;
@@ -395,7 +440,10 @@ header {
     width: 100%;
     margin: 0;
   }
-  
+  .content-6a{
+    width: 100%;
+    padding: 10px;
+  }
   .content-6{
     padding: 30px;
   }
@@ -410,5 +458,10 @@ header {
   
   .prev-btn {
     right:9%;
+  }
+  .mini-carousel-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
