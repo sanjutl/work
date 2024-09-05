@@ -2,7 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: "Nunito Sans", sans-serif;
 }
 header {
   height: 55px;
@@ -105,7 +105,7 @@ header {
   object-fit: cover;
   padding-left: 20px;
   transition: transform ease-in 1s;
-  opacity: 1;
+  opacity: 0;
 }
 .content-2 a {
   text-decoration: none;
@@ -126,59 +126,51 @@ header {
   transition: transform ease-in 1s;
   opacity: 0;
 }
-.section-3{
-    
+.section-3 {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  background-color: #F4F3EF       ;
+  background-color: #f4f3ef;
   padding: 100px 0px;
-   
-
 }
-.content-3{
+.content-3 {
   display: flex;
   width: 50%;
   flex-direction: column;
   padding-left: 100px;
   padding-bottom: 100px;
   justify-content: start;
-  flex: 1 1 340px; 
-  
+  flex: 1 1 340px;
 }
-.content-3 ul{
+.content-3 ul {
   text-decoration: dotted;
   padding-left: 10px;
   font-size: 12px;
   letter-spacing: 3px;
 }
 
-.content-3a{
+.content-3a {
   width: 50%;
   object-fit: cover;
   flex: 1 1 340px;
   padding-left: 30px;
- 
-   
 }
-.content-3a img{
+.content-3a img {
   object-fit: contain;
-  width: 90%;
-  max-height:650px;
+  width: 100%;
+  max-height: 650px;
 }
-.content-3 a{
-  
+.content-3 a {
   text-decoration: none;
   color: black;
   font-size: 10px;
   font-size: 12px;
   letter-spacing: 3px;
-  
 }
 .carousel-container {
-  width: 100%; 
+  width: 90%;
   overflow: hidden;
   position: relative;
   min-height: 400px;
@@ -187,14 +179,13 @@ header {
 
 .carousel-wrapper {
   display: flex;
-  transition: transform 0.5s ease-in-out;
+  transition: transform 1.5s ease-in-out;
 }
 
 .carousel-item {
   min-width: 100%;
   box-sizing: border-box;
   transition: opacity 1s ease-in-out;
-  
 }
 
 .samebutton {
@@ -208,17 +199,15 @@ header {
   height: 40px;
   width: 40px;
   background-color: transparent;
-  
 }
 .next-btn {
   left: 85%;
- 
 }
 
 .prev-btn {
-  right:11%;
+  right: 11%;
 }
-.para-3{
+.para-3 {
   width: 90%;
   font-size: 38px;
   margin: 50px 0px;
@@ -259,65 +248,61 @@ header {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  background-color: #F4F3EF       ;
+  background-color: #f4f3ef;
   padding: 100px 0px;
 }
-.content-6{
-    display: flex;
-    width: 50%;
-    flex-direction: column;
-    padding-left: 100px;
-    padding-bottom: 100px;
-    justify-content: start;
-    flex: 1 1 340px; 
-    
-  
+.content-6 {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  padding-left: 100px;
+  padding-bottom: 100px;
+  justify-content: start;
+  flex: 1 1 340px;
 }
-.content-6 ul{
+.content-6 ul {
   text-decoration: dotted;
   padding-left: 10px;
   font-size: 12px;
   letter-spacing: 3px;
 }
 
-.content-6 a{
-  
+.content-6 a {
   text-decoration: none;
   color: black;
   font-size: 10px;
   font-size: 12px;
   letter-spacing: 3px;
-  
 }
-.para-6{
+.para-6 {
   width: 90%;
   font-size: 38px;
   margin: 50px 0px;
 }
-.content-6a{
+.content-6a {
   width: 50%;
   object-fit: cover;
   flex: 1 1 340px;
   padding-left: 30px;
 }
 .mini-carousel-container {
-  width: 100%; 
+  width: 90%;
   overflow: hidden;
   position: relative;
   min-height: 400px;
-  padding-bottom:20px ;
+  padding-bottom: 20px;
 }
 
 .mini-carousel-wrapper {
   display: flex;
-  transition: transform 0.5s ease-in-out;
+  transition: transform 1.5s ease-in-out;
+  
 }
 
 .mini-carousel-item {
   min-width: 100%;
   box-sizing: border-box;
   transition: opacity 1s ease-in-out;
-  
 }
 
 .mini-samebutton {
@@ -331,26 +316,89 @@ header {
   height: 40px;
   width: 40px;
   background-color: transparent;
-  
 }
-.content-6a img{
+.content-6a img {
   object-fit: contain;
-  width: 90%;
+  width: 100%;
   max-height: 650px;
 }
 .mini-next-btn {
   left: 85%;
- 
 }
 
 .mini-prev-btn {
-  right:11%;
+  right: 11%;
+}
+.section-7 {
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+.content-7 {
+  margin: 100px 0px;
+  padding: 5px;
+}
+.content-7 p {
+  font-size: 38px;
+  padding: 10px 100px;
+}
+.scroll-container {
+  display: flex;
+  flex-direction: row;
+  width: max-content;
+  flex-wrap: nowrap;
+  padding: 5px;
+  transition: transform ease-in-out;
+}
+.scroll-container2 {
+  display: flex;
+  flex-direction: row;
+  width: max-content;
+  flex-wrap: nowrap;
+  padding: 5px;
+  transform: translatex(-3200px);
+  position: relative;
+  transition: transform ease-in ;
+}
+.orginal {
+  height: 302px;
+  width: 2170px;
+  background-image: url(./images/landing-marquee-1.jpg);
+  background-size: cover;
+}
+.copy {
+  height: 302px;
+  width: 2170px;
+  background-image: url(./images/landing-marquee-1.jpg);
+  background-size: cover;
+}
+.orginal2 {
+  height: 302px;
+  width: 2170px;
+  background-image: url(./images/landing-marquee-2.jpg);
+  background-size: cover;
+  position: relative;
+  right: 300px;
+}
+.copy2 {
+  height: 302px;
+  width: 2170px;
+  background-image: url(./images/landing-marquee-2.jpg);
+  background-size: cover;
+  position: relative;
+  right: 300px;
+}
+.copy3 {
+  height: 302px;
+  width: 2170px;
+  background-image: url(./images/landing-marquee-2.jpg);
+  background-size: cover;
+  position: relative;
+  right: 300px;
 }
 @media (max-width: 1040px) {
   .section-1 {
     padding: 0;
   }
-  
 
   .hiroshi {
     width: 100%;
@@ -398,10 +446,10 @@ header {
     margin: 0;
     width: 100%;
   }
-  .section-3{
+  .section-3 {
     padding: 0px;
   }
-  .section-6{
+  .section-6 {
     padding: 0px;
   }
   .para-3 p {
@@ -418,14 +466,14 @@ header {
     align-items: center;
     justify-content: center;
   }
-  
+
   .para-3 {
     margin: 30px 0px;
   }
-  .content-3{
+  .content-3 {
     padding: 30px;
   }
-  .content-3a{
+  .content-3a {
     width: 100%;
     padding: 10px;
   }
@@ -440,31 +488,30 @@ header {
     width: 100%;
     margin: 0;
   }
-  .content-6a{
+  .content-6a {
     width: 100%;
     padding: 10px;
   }
-  .content-6{
+  .content-6 {
     padding: 30px;
   }
-  .samebutton{
+  .samebutton {
     top: 80%;
     transform: translateY(-60%);
   }
   .next-btn {
     left: 88%;
-   
   }
-  
+
   .prev-btn {
-    right:9%;
+    right: 9%;
   }
-  .mini-carousel-item{
+  .mini-carousel-item {
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  .para-6{
+  .para-6 {
     margin: 30px 0px;
   }
 }
