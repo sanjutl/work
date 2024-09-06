@@ -346,18 +346,18 @@ header {
   flex-direction: row;
   width: max-content;
   flex-wrap: nowrap;
-  padding: 5px;
-  transition: transform ease-in-out;
+  transition: transform ease-in-out 1s;
+  margin-bottom: 5px;
+
 }
 .scroll-container2 {
   display: flex;
   flex-direction: row;
   width: max-content;
   flex-wrap: nowrap;
-  padding: 5px;
   transform: translatex(-3200px);
-  position: relative;
-  transition: transform ease-in ;
+  transition: transform ease-in-out 1s;
+  margin: 5px;
 }
 .orginal {
   height: 302px;
@@ -377,7 +377,7 @@ header {
   background-image: url(./images/landing-marquee-2.jpg);
   background-size: cover;
   position: relative;
-  right: 300px;
+  right: 500px;
 }
 .copy2 {
   height: 302px;
@@ -385,7 +385,7 @@ header {
   background-image: url(./images/landing-marquee-2.jpg);
   background-size: cover;
   position: relative;
-  right: 300px;
+  right: 500px;
 }
 .copy3 {
   height: 302px;
@@ -393,7 +393,7 @@ header {
   background-image: url(./images/landing-marquee-2.jpg);
   background-size: cover;
   position: relative;
-  right: 300px;
+  right: 500px;
 }
 @media (max-width: 1040px) {
   .section-1 {
@@ -476,6 +476,9 @@ header {
   .content-3a {
     width: 100%;
     padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .content-4 h3 {
     font-size: 30px;
@@ -491,27 +494,94 @@ header {
   .content-6a {
     width: 100%;
     padding: 10px;
+    display: flex;
+    align-self:center;
+    justify-content: center;
   }
   .content-6 {
     padding: 30px;
   }
   .samebutton {
     top: 80%;
-    transform: translateY(-60%);
+    transform: translateY(-10px);
   }
   .next-btn {
-    left: 88%;
+    left: 90%;
   }
 
   .prev-btn {
-    right: 9%;
+    right: 5%;
   }
   .mini-carousel-item {
     display: flex;
     align-items: center;
     justify-content: center;
   }
+.mini-samebutton {
+  transform: translateY(-90px);
+}
+
   .para-6 {
     margin: 30px 0px;
+  }
+  .section-7{
+    padding: 0;
+    overflow-y: hidden;
+  }
+  .orginal {
+    height: 151px;
+    width: 1085px;
+    background-image: url(./images/landing-marquee-1.jpg);
+    background-size: cover;
+  }
+  .orginal2 {
+    height: 151px;
+    width: 1085px;
+    background-image: url(./images/landing-marquee-2.jpg);
+    background-size: cover;
+    position: relative;
+    right: 150px;
+  }
+  .copy {
+    height: 151x;
+    width: 1085px;
+    background-image: url(./images/landing-marquee-1.jpg);
+    background-size: cover;
+  }
+  .orginal2 {
+    height: 151px;
+    width: 1085px;
+    background-image: url(./images/landing-marquee-2.jpg);
+    background-size: cover;
+    position: relative;
+    right: 300px;
+  }
+  .copy2 {
+    height: 151px;
+    width: 1085px;
+    background-image: url(./images/landing-marquee-2.jpg);
+    background-size: cover;
+    position: relative;
+    right: 300px;
+  }
+  .copy3 {
+    height: 302px;
+    width: 2170px;
+    background-image: url(./images/landing-marquee-2.jpg);
+    background-size: cover;
+    position: relative;
+    right: 300px;
+  }
+  .scroll-container{
+    height: 151px;
+  }
+  .scroll-container2{
+    height: 151px;
+
+  }
+  .content-7 p{
+    padding: 10px 0px;
+    font-size: 35px;
+    text-align: center;
   }
 }

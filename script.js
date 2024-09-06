@@ -240,9 +240,9 @@ observer.observe(marker);
 window.addEventListener("scroll", () => {
   let measuredScrollY = Math.max(0, window.scrollY - scrollOffset);
   document.querySelector(".scroll-container").style.transform = `translateX(${
-    measuredScrollY * -0.3
+    measuredScrollY * -0.5
   }px)`;
   document.querySelector(".scroll-container2").style.transform = `translate3d(${
-    measuredScrollY * 0.3
+    measuredScrollY * 0.5
   }px,${0}px,${0}px)`;
 });
