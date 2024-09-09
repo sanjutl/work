@@ -21,6 +21,7 @@ header {
   height: 91vh;
   position: relative;
   overflow: hidden;
+  
 }
 .carousel {
   width: 100%;
@@ -36,7 +37,13 @@ header {
   width: 100%;
   object-fit: cover;
 }
-
+.text-transition{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .section-1 {
   width: 95%;
   margin: auto;
@@ -281,7 +288,6 @@ header {
 }
 .content-6a {
   width: 50%;
-  object-fit: cover;
   flex: 1 1 340px;
   padding-left: 30px;
 }
@@ -346,7 +352,7 @@ header {
   flex-direction: row;
   width: max-content;
   flex-wrap: nowrap;
-  transition: transform ease-in-out 1s;
+  transition: transform ease-in-out ;
   margin-bottom: 5px;
 
 }
@@ -356,7 +362,7 @@ header {
   width: max-content;
   flex-wrap: nowrap;
   transform: translatex(-3200px);
-  transition: transform ease-in-out 1s;
+  transition: transform ease-in-out ;
   margin: 5px;
 }
 .orginal {
@@ -377,7 +383,7 @@ header {
   background-image: url(./images/landing-marquee-2.jpg);
   background-size: cover;
   position: relative;
-  right: 500px;
+  right:600px;
 }
 .copy2 {
   height: 302px;
@@ -385,7 +391,7 @@ header {
   background-image: url(./images/landing-marquee-2.jpg);
   background-size: cover;
   position: relative;
-  right: 500px;
+  right: 600px;
 }
 .copy3 {
   height: 302px;
@@ -395,6 +401,47 @@ header {
   position: relative;
   right: 500px;
 }
+.section-8{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #f4f3ef;
+  padding: 100px 0px;
+}
+.content-8{
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  padding-left: 100px;
+  padding-bottom: 100px;
+  justify-content: start;
+  flex: 1 1 340px;
+}
+.content-8 ul{
+  text-decoration: dotted;
+  padding-left: 10px;
+  font-size: 12px;
+  letter-spacing: 3px;
+}
+
+.content-8 a{
+  text-decoration: none;
+  color: black;
+  font-size: 10px;
+  font-size: 12px;
+  letter-spacing: 3px;
+}
+.para-8{
+  width: 90%;
+  font-size: 38px;
+  margin: 50px 0px;
+}
+.content-8a{
+  width: 50%;
+}
+
 @media (max-width: 1040px) {
   .section-1 {
     padding: 0;

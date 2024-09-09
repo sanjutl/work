@@ -18,23 +18,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function previousSlide() {
     if (index <= 0) return;
-    carouselRow.style.transition = "transform 1s ease-in-out";
+    carouselRow.style.transition = "transform 1s ease-in";
     index--;
     carouselRow.style.transform = "translateX(" + -width * index + "px)";
   }
 
-  carouselRow.addEventListener("transitionend", function () {
-    if (carouselSlides[index].id === "first") {
-      carouselRow.style.transition = "none";
-      index = carouselSlides.length - index;
-      carouselRow.style.transform = "translateX(" + -width * index + "px)";
-    }
-    if (carouselSlides[index].id === "last") {
-      carouselRow.style.transition = "none";
-      index = carouselSlides.length - 2;
-      carouselRow.style.transform = "translateX(" + -width * index + "px)";
-    }
-  });
+    carouselRow.addEventListener("transitionend", function () {
+      if (carouselSlides[index].id === "first") {
+        carouselRow.style.transition = "none";
+        index = carouselSlides.length - index;
+        carouselRow.style.transform = "translateX(" + -width * index + "px)";
+      }
+      if (carouselSlides[index].id === "last") {
+        carouselRow.style.transition = "none";
+        index = carouselSlides.length - 2;
+        carouselRow.style.transform = "translateX(" + -width * index + "px)";
+      }
+    });
 
   function autoSlide() {
     deleteInterval = setInterval(time, 1500);
