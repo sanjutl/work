@@ -1,11 +1,11 @@
 const parentContainer = document.querySelector(".parent-container");
 setTimeout(() => {
   parentContainer.style.display = "block";
-}, 7500);
+}, 13000);
 const mainContainer = document.querySelector(".container");
 setTimeout(() => {
   mainContainer.style.display = "none";
-}, 7500);
+}, 13000);
 
 document.addEventListener("DOMContentLoaded", function () {
   const carouselRow = document.querySelector(".carousel");
@@ -20,15 +20,11 @@ document.addEventListener("DOMContentLoaded", function () {
     if (index <= 0) return;
     carouselRow.style.transition = "transform 1s ease-in";
     index--;
+    console.log(index)
     carouselRow.style.transform = "translateX(" + -width * index + "px)";
   }
 
     carouselRow.addEventListener("transitionend", function () {
-      if (carouselSlides[index].id === "first") {
-        carouselRow.style.transition = "none";
-        index = carouselSlides.length - index;
-        carouselRow.style.transform = "translateX(" + -width * index + "px)";
-      }
       if (carouselSlides[index].id === "last") {
         carouselRow.style.transition = "none";
         index = carouselSlides.length - 2;
@@ -37,13 +33,56 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
   function autoSlide() {
-    deleteInterval = setInterval(time, 1500);
-    function time() {
-      previousSlide();
-    }
-  }
+    deleteInterval = setInterval(time, 2000)
+      
+        function time(){
+          if(carouselSlides[index].id=="stop"){
+            clearInterval(deleteInterval)
+          }else{
+            previousSlide()
+          }
+        }}
   autoSlide();
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+// Define the callback function
+const callback = (entries) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) {
+      return
+    }
+    entry.target.classList.add("content-fade");
+  });
+};
+
+// Set options for the observer
+const options = {
+  root: null, // default is the viewport
+  rootMargin: '0px',
+  threshold: 0.25 // trigger when 50% of the element is in view
+};
+
+// Create the observer instance
+const contentobserver = new IntersectionObserver(callback, options);
+
+// Select the target element
+const target = document.querySelector('.logo-content');
+
+// Start observing the target element
+contentobserver.observe(target);
+})
+
+
+
+
+
+
+
+
+
 
 let allDiv = document.querySelectorAll(".con2-imgdiv");
 let divOption = {

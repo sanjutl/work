@@ -44,6 +44,16 @@ header {
   align-items: center;
   justify-content: center;
 }
+.logo-content{
+  font-size: 50px;
+  color: red;
+  transform: translateX(100%);
+  opacity: 0;
+}
+.logo-content.content-fade{
+  opacity: 1;
+  animation: bounce 5s ease-out;
+}
 .section-1 {
   width: 95%;
   margin: auto;
@@ -630,5 +640,25 @@ header {
     padding: 10px 0px;
     font-size: 35px;
     text-align: center;
+  }
+}
+
+
+
+/* animations */
+
+@keyframes bounce {
+  0% {
+    transform: translatex(100);
+    opacity: 0;
+  }
+ 
+  50%{
+    transform: translateX(0%);
+    opacity: 1;
+  } 
+  100%{
+    transform: translateX(0);
+    opacity: 0;
   }
 }
