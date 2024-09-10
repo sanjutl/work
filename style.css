@@ -53,7 +53,7 @@ header {
 }
 .logo-content.content-fade{
   opacity: 1;
-  animation: bounce 4s ease-out;
+  animation: bounce 5s ease-out;
 }
 .section-1 {
   width: 95%;
