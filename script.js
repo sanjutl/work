@@ -1,11 +1,11 @@
 const parentContainer = document.querySelector(".parent-container");
 setTimeout(() => {
   parentContainer.style.display = "block";
-}, 13000);
+}, 9000);
 const mainContainer = document.querySelector(".container");
 setTimeout(() => {
   mainContainer.style.display = "none";
-}, 13000);
+}, 9000);
 
 document.addEventListener("DOMContentLoaded", function () {
   const carouselRow = document.querySelector(".carousel");
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
   function autoSlide() {
-    deleteInterval = setInterval(time, 2000)
+    deleteInterval = setInterval(time, 1500)
       
         function time(){
           if(carouselSlides[index].id=="stop"){
@@ -285,3 +285,25 @@ window.addEventListener("scroll", () => {
     measuredScrollY * 0.5
   }px,${0}px,${0}px)`;
 });
+
+//fading images
+
+document.addEventListener("DOMContentLoaded", function () {
+  let backgrounds=document.querySelectorAll(".fading-images")
+  let imageIndex=0
+  let changeColor=document.querySelector(".section-8")
+  const colors = ['#FF5733', '#33FF57', '#3357FF', '#F0E68C', '#DDA0DD'];
+  let mainBackground=document.querySelector(".section-8")
+  function changeBackground(){
+    backgrounds[imageIndex].classList.remove("showing");
+    imageIndex++
+    if(imageIndex>=backgrounds.length){
+      imageIndex=0
+    }
+    backgrounds[imageIndex].classList.add("showing")
+    changeColor.style.backgroundColor = colors[imageIndex];
+
+
+  }
+  setInterval(changeBackground,5000)
+})
