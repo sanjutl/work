@@ -48,7 +48,7 @@ header {
 .logo-content{
   font-size: 50px;
   color: red;
-  transform: translateX(100%);
+  transform: translateX(80%);
   opacity: 0;
 }
 .logo-content.content-fade{
