@@ -249,17 +249,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //section 7
 
-window.addEventListener("scroll", function () {
-  const scrollPosition = window.scrollY;
-
-  // Translate each layer at different speeds
-  document.querySelector(".scroll-container").style.transform = `translateX(${
-    scrollPosition * -0.3
-  }px)`;
-  document.querySelector(".scroll-container2").style.transform = `translate3d(${
-    scrollPosition * 0.3
-  }px,${0}px,${0}px)`;
-});
 
 const marker = document.querySelector(".section-7");
 let scrollOffset = 0;
@@ -268,6 +257,26 @@ const observerCallback = (entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       scrollOffset = window.scrollY;
+      window.addEventListener("scroll", () => {
+        let measuredScrollY = Math.max(0, window.scrollY - scrollOffset);
+        document.querySelector(".scroll-container").style.transform = `translateX(${
+          measuredScrollY * -0.2
+        }px)`;
+        document.querySelector(".scroll-container2").style.transform = `translate3d(${
+          measuredScrollY * 0.2
+        }px,${0}px,${0}px)`;
+      });
+    }else{
+      value=window.scrollY;
+      console.log(value ,'is this')
+      window.addEventListener("scroll", () => {
+        document.querySelector(".scroll-container").style.transform = `translateX(${
+          value * 0.3
+        }px)`;
+        document.querySelector(".scroll-container2").style.transform = `translate3d(${
+          value * -0.3
+        }px,${0}px,${0}px)`;
+      });
     }
   });
 };
@@ -276,15 +285,7 @@ const observer = new IntersectionObserver(observerCallback, {
   threshold: 0,
 });
 observer.observe(marker);
-window.addEventListener("scroll", () => {
-  let measuredScrollY = Math.max(0, window.scrollY - scrollOffset);
-  document.querySelector(".scroll-container").style.transform = `translateX(${
-    measuredScrollY * -0.5
-  }px)`;
-  document.querySelector(".scroll-container2").style.transform = `translate3d(${
-    measuredScrollY * 0.5
-  }px,${0}px,${0}px)`;
-});
+
 
 //fading images
 
@@ -292,8 +293,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let backgrounds=document.querySelectorAll(".fading-images")
   let imageIndex=0
   let changeColor=document.querySelector(".section-8")
-  const colors = ['#FF5733', '#33FF57', '#3357FF', '#F0E68C', '#DDA0DD'];
-  let mainBackground=document.querySelector(".section-8")
+  const colors = ["rgb(238,238,238)","rgb(169,184,195)"];
   function changeBackground(){
     backgrounds[imageIndex].classList.remove("showing");
     imageIndex++
@@ -305,5 +305,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   }
-  setInterval(changeBackground,5000)
+  setInterval(changeBackground,4000)
 })
