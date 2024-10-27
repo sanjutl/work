@@ -81,11 +81,35 @@ header {
   font-size: 15px;
 }
 
-.content button {
-  padding: 15px 75px;
-  background-color: white;
+.both a{
   border: 1px solid black;
+  padding: 15px 55px;
+  text-decoration: none;
+  color: black;
+  position: relative;
+  transition: color 0.5 ease-in;
 }
+.both a::after{
+  content: '';
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: black;
+  left: 0;
+  top: 0;
+  transform-origin: right;
+  z-index: -1;
+  transform: scaleX(0);
+  transition: transform .8s cubic-bezier(.22,.61,.36,1);
+}
+.both a:hover:after{
+  transform: scaleX(1);
+  transform-origin: left;
+}
+.both a:hover{
+  color: white;
+}
+
 .hiroshi {
   width: 500px;
 }

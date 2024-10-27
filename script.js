@@ -266,17 +266,6 @@ const observerCallback = (entries) => {
           measuredScrollY * 0.2
         }px,${0}px,${0}px)`;
       });
-    }else{
-      value=window.scrollY;
-      console.log(value ,'is this')
-      window.addEventListener("scroll", () => {
-        document.querySelector(".scroll-container").style.transform = `translateX(${
-          value * 0.3
-        }px)`;
-        document.querySelector(".scroll-container2").style.transform = `translate3d(${
-          value * -0.3
-        }px,${0}px,${0}px)`;
-      });
     }
   });
 };
