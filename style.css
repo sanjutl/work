@@ -446,7 +446,7 @@ header {
   flex-wrap: wrap;
   background-color: #f4f3ef;
   padding: 100px 0px;
-  transition: tranform 5s ease;
+  transition: background .5s ease;
 }
 .content-8{
   display: flex;

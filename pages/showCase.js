@@ -120,4 +120,5 @@ function sliding() {
   index = (index + 1) % slides.length;
   updatePosition();
 }
-let intervalSliding = setInterval(sliding, interval);
+
+let intervalSliding=setInterval(sliding,3000)

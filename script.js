@@ -256,9 +256,13 @@ let scrollOffset = 0;
 const observerCallback = (entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
+      console.log('hai');
+      
       scrollOffset = window.scrollY;
       window.addEventListener("scroll", () => {
         let measuredScrollY = Math.max(0, window.scrollY - scrollOffset);
+        console.log(window.scrollY);
+        
         document.querySelector(".scroll-container").style.transform = `translateX(${
           measuredScrollY * -0.2
         }px)`;
@@ -271,7 +275,7 @@ const observerCallback = (entries) => {
 };
 const observer = new IntersectionObserver(observerCallback, {
   root: null,
-  threshold: 0,
+  threshold: 0.1,
 });
 observer.observe(marker);
 
