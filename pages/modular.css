@@ -941,6 +941,9 @@ position: relative;
     margin: 0% 17% 0% 12%;
     padding: 50px 0px 6px 0px;
   }
+  .section-6 .container .contents .carousel-wrapper .carousel-contents .inner-wrapper {
+    width: 100%;
+  }
 }
 
 @media (max-width: 880px) {
@@ -1077,5 +1080,14 @@ position: relative;
 }
 .section-5 .container .left .left-contents .contents {
   padding: 0% 5% 0% 0%;
+}
+.section-6 .container {
+  padding-top: 100px;
+}
+.section-6 .container .contents {
+  padding:0% 5% 0% 5%
+}
+.section-6 .container .contents .carousel-wrapper .carousel-contents .inner-wrapper .contents h4 {
+  font-size: 20px;
 }
 }
