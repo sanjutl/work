@@ -834,6 +834,355 @@ position: relative;
     background-color: #000;
     opacity: .3
 }
+.section-7{
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+.section-7 .container{
+  width: 100%;
+}
+.section-7 .container .video-container video{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.section-8{
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  position: relative;
+}
+.section-8 .container{
+  width: 100%;
+  background-color: #F2F2F2;
+
+}
+.section-8 .container .wrapper{
+  width: 100%;
+  display: flex;
+}
+.section-8 .container .wrapper .contents-main{
+  width: 33.3%;
+  padding: 46px 0px 70px 0px;
+  border-right:1px solid #c2c2c2;
+}
+#last{
+border: none;
+}
+.section-8 .container .wrapper .contents-main .contents{
+padding: 7.1% 12.65%;
+}
+.section-8 .container .wrapper .contents-main .contents .image-container{
+margin-bottom: 65px;
+padding: 0 40px;
+}
+.section-8 .container .wrapper .contents-main .contents .image-container img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-width: 323px;
+}
+.section-8 .container .wrapper .contents-main .contents .heading-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 0 20px;
+    border-bottom: 1px solid #c2c2c2;
+}
+.section-8 .container .wrapper .contents-main .contents .heading-container h4{
+  font-family: "DM Sans", sans-serif;
+  color: #000;
+  font-size: 24px;
+  line-height: 1.20833em;
+  font-weight: 400;
+}
+.section-8 .container .wrapper .contents-main .contents .description{
+  margin: 20px 0;
+}
+.section-8 .container .wrapper .contents-main .contents .description ul{
+  list-style: none;
+}
+.section-8 .container .wrapper .contents-main .contents .description ul li{
+  position: relative;
+  margin-left: 30px;
+  color: black;
+  font-family: "DM Sans", sans-serif;
+  color: #000;
+  font-size: 16px;
+  line-height: 1.20833em;
+  font-weight: 100;
+  margin: 10px 0;
+}
+.section-8 .container .wrapper .contents-main .contents .description ul li::before{
+  background: url(./img/check-mark.png);
+  content: '';
+  position: absolute;
+  background-repeat: no-repeat;
+  top: 8px;
+  left: -25px;
+  width: 13px;
+  height: 10px;
+  display: inline-block;
+  filter: invert(1);
+  margin-right: 15px;
+}
+.section-8 .container .wrapper .contents-main .contents .bottom-contents{
+
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-top: 1px solid #c2c2c2;
+padding-top: 35px;
+}
+.section-8 .container .wrapper .contents-main .contents .bottom-contents .price span{
+  font-size: 12px;
+  line-height: 1.16667em;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  font-family: "DM Sans", sans-serif;
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  color: #000;
+  margin-bottom: 13px;
+ }
+ .section-8 .container .wrapper .contents-main .contents .bottom-contents .price-details span{
+  font-family: "DM Sans", sans-serif;
+    color: #000;
+    font-size: 24px;
+ }
+ .section-8 .container .wrapper .contents-main .contents .bottom-contents .button{
+  width: 40%;
+ }
+ .section-8 .container .wrapper .contents-main .contents .bottom-contents .button a{
+  font-family: "Nunito Sans", sans-serif;
+    font-size: 16px;
+    line-height: 1.6875em;
+    font-weight: 400;
+    color: #000;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    text-decoration: none;
+    transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out;
+    border: 1px solid black;
+    text-align: center;
+    padding: 10px 0;
+    background-color: transparent;
+    z-index: 1;
+    transition-delay: 0.03s;
+ }
+ .section-8 .container .wrapper .contents-main .contents .bottom-contents .button a:hover span{
+ color: white;
+}
+ .section-8 .container .wrapper .contents-main .contents .bottom-contents .button a::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-color: black;
+  transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+  z-index: -1;
+  transform-origin: right;
+  transform: scaleX(0);
+ }
+ .section-8 .container .wrapper .contents-main .contents .bottom-contents .button a:hover:after{
+  transform-origin: left;
+  transform: scaleX(1);
+ }
+ .section-8 .container .wrapper .contents-main .contents .bottom-contents .button a span{
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 20px;
+  line-height: 1.6875em;
+  font-weight: 400;
+  color: #000;
+ }
+.section-9{
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+}
+.section-9 .container{
+  width: 100%;
+  display: flex;
+  gap: 5px;
+  padding-top: 100px;
+}
+.section-9 .container .left-container{
+  width: 42%;
+  background-color: #A9B1AB;
+}
+.section-9 .container .right-container{
+  width: 58%;
+}
+.section-9 .container .left-container .contents-main{
+  padding: 14% 0% 8% 11%;
+}
+.section-9 .container .left-container .contents-main .contents{
+width: 100%;
+}
+.section-9 .container .left-container .contents-main .contents .heading{
+  padding: 0% 35% 0% 0%;
+}
+
+.section-9 .container .left-container .contents-main .contents .heading h3{
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
+  color: #000;
+  font-size: 36px;
+  line-height: 1.13889em;
+}
+.section-9 .container .left-container .contents-main .contents .link-content{
+  margin-top: 20px;
+}
+.section-9 .container .left-container .contents-main .contents .link-content a{
+  font-family: "Nunito Sans", sans-serif;
+    font-size: 16px;
+    line-height: 1.6875em;
+    font-weight: 400;
+    color: #000;
+    position: relative;
+    display: inline-flex;
+    vertical-align: middle;
+    width: auto;
+    margin: 0;
+    text-decoration: none;
+    text-transform: lowercase;
+    border-radius: 0;
+    outline: 0;
+    transition: color .2s ease-out, background-color .2s ease-out, border-color .2s ease-out;
+}
+.section-9 .container .left-container .contents-main .contents .link-content a .span-link{
+  color: black  ;
+  position: relative;
+  --my-underline-position-y: calc(90% - 1px);
+  --my-underline-height: 1px;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(90deg, currentColor 0, currentColor 100%);
+  background-position: 100% var(
+    --my-underline-position-y); 
+  background-size: 100% var(
+    --my-underline-height);
+  }
+
+
+  .section-9 .container .left-container .contents-main .contents .link-content a:hover .span-link{
+    animation: slide .8s cubic-bezier(.57,.39,0,.86) 1 forwards;
+  }
+
+  .section-9 .container .left-container .contents-main .image-container{
+    width: 100%;
+    height: 100% ;
+  }
+  .section-9 .container .left-container .contents-main .image-container .image-wrapper{
+    padding: 26% 0% 0% 0%;
+  }
+  .section-9 .container .right-container .image-container{
+    width: 100%;
+    height: 100%;
+  }
+
+  .section-9 .container .right-container .image-container img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  .section-10{
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: black ;
+  }
+  .section-10 .container{
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 54px 100px 54px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .section-10 .container .contents{
+
+  padding-right: 20px;
+  max-width: 47%;
+  }
+  .section-10 .container .button{
+  flex: 0 0 auto;
+}
+
+  .section-10 .container .contents p{
+    color: white;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 16px;
+    line-height: 1.6875em;
+  }
+
+  .section-10 .container .button a{
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 16px;
+    line-height: 1.6875em;
+    font-weight: 400;
+    color: white;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    text-decoration: none;
+    transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out;
+    border: 1px solid white;
+    text-align: center;
+    background-color: transparent;
+    z-index: 1;
+    transition-delay: 0.03s;
+    padding: 10px 68px;
+    }
+  .section-10 .container .button a span{
+    font-family: "Nunito Sans", sans-serif;
+  font-size: 18 px;
+  line-height: 1.6875em;
+  font-weight: 400;
+  color: white;
+  }
+  .section-10 .container .button a:after{
+    content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-color: white;
+  transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+  z-index: -1;
+  transform-origin: right;
+  transform: scaleX(0);
+  }
+  .section-10 .container .button a:hover:after{
+    transform-origin: left;
+  transform: scaleX(1);
+  }
+  .section-10 .container .button a:hover span{
+    color: black
+  }
+  
+
+
+
+
+
+
+
+
+
+
 
 @keyframes slide{
   0% {
@@ -862,6 +1211,10 @@ position: relative;
     font-size: 22px;
     line-height: 1.22727em;
     padding-right: 10px;
+  }
+  .section-9 .container .left-container .contents-main .contents .heading h3 {
+    font-size: 22px;
+    line-height: 1.22727em;
   }
 }
 @media (max-width: 1257px) {
@@ -944,6 +1297,29 @@ position: relative;
   .section-6 .container .contents .carousel-wrapper .carousel-contents .inner-wrapper {
     width: 100%;
   }
+  .section-8 .container .wrapper{
+    flex-direction: column;
+  }
+  .section-8 .container .wrapper .contents-main{
+    width: 100%;
+  }
+  .section-8 .container .wrapper .contents-main .contents .image-container {
+    display: flex;
+    justify-content: center;
+  }
+  .section-9 .container {
+    flex-direction: column;
+  }
+  .section-9 .container .left-container {
+    width: 100%;
+  }
+  .section-9 .container .right-container {
+    width: 100%;
+
+  }
+  .section-10 .container .contents {
+    max-width: 57%;
+}
 }
 
 @media (max-width: 880px) {
@@ -995,6 +1371,9 @@ position: relative;
 }
 .section-5 .container .right {
   width: 100%;
+}
+.section-10 .container {
+  padding: 54px 50px 54px 50px;
 }
 }
 
@@ -1089,5 +1468,25 @@ position: relative;
 }
 .section-6 .container .contents .carousel-wrapper .carousel-contents .inner-wrapper .contents h4 {
   font-size: 20px;
+}
+.section-8 .container .wrapper .contents-main {
+  padding-bottom: 0;
+}
+.section-9 .container .left-container .contents-main .contents .heading {
+  padding: 0% 10% 0% 0%;
+}
+.section-9 .container{
+  padding: 0;
+}
+.section-10 .container {
+  flex-direction: column;
+  align-items: start;
+}
+.section-10 .container .contents {
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+.section-10 .container {
+  padding: 54px 0px 54px 20px;
 }
 }
