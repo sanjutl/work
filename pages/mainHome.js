@@ -76,3 +76,80 @@ let observer= new IntersectionObserver(setActiveItems,options)
 imageItems.forEach((item)=>{
     observer.observe(item)
 })
+
+
+
+// carousle 2
+
+
+
+const wrapper2=document.querySelector('.wrapper-2')
+const slide2=document.querySelectorAll('.carousel-item-2')
+console.log(slide2);
+let slide2index=0
+const ClonedDiv=slide2[0].cloneNode(true)
+console.log(ClonedDiv);
+
+ClonedDiv.id='second-clone';
+wrapper2.append(ClonedDiv)
+function carouselSlide(){
+  let slides2=document.querySelectorAll('.carousel-item-2')
+  slides2.forEach((slide)=>{
+    slide.classList.remove('active')
+  })
+  
+ 
+slide2index++
+slides2[slide2index].classList.add('active')
+
+slide2Width=slides2[slide2index].getBoundingClientRect().width;
+wrapper2.style.transform=`translateX(-${slide2index*slide2Width}px)`;
+wrapper2.style.transition='1s'
+
+}
+wrapper2.addEventListener('transitionend',()=>{
+  let slides2=document.querySelectorAll('.carousel-item-2')
+  if(slides2[slide2index].id===ClonedDiv.id){
+    wrapper2.style.transition='none'
+    slide2index=0
+    wrapper2.style.transform=`translateX(-${slide2index*slide2Width}px)`;
+  }
+  
+})
+let sliding2=setInterval(carouselSlide,3000)
+
+//carousel-2 description
+
+let descriptionindex=1
+let description2=document.querySelectorAll('.description-2')
+
+function updateDescription(){
+  setInterval(()=>{
+    
+    description2.forEach((description)=>{
+      description.classList.remove('active')
+    })
+    description2[descriptionindex].classList.add('active')
+    descriptionindex=(descriptionindex+1)%description2.length
+  },3000)
+}
+
+updateDescription()
+
+
+
+
+
+//sliding items
+
+slidingItems=document.querySelectorAll('.tabs')
+
+
+slidingItems.forEach((item)=>{
+  item.addEventListener('click',function(){
+    slidingItems.forEach((items)=>{
+      items.classList.remove("active")
+    })
+    this.classList.add('active')
+  })
+})
