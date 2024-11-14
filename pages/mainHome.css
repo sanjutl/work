@@ -284,6 +284,7 @@ margin-bottom: 20px;
 }
 .section-3 .container .link-items .link h4 a{
   color: black;
+
 }
 .section-3 .container .description-wrapper .contents-main{
   padding-right: 120px;
@@ -935,6 +936,9 @@ footer .footer-top .inner-contents .grid-items p a{
 .section-5 .container .main-contents .contents{
   padding-right: 20px;
 }
+.section-3 .container .description-wrapper .contents-main {
+  padding-right: 60px;
+} 
 }
 @media(max-width:1280px){
   .section-5 .container .main-contents .contents .tabs{
@@ -961,6 +965,53 @@ footer .footer-top .inner-contents .grid-items p a{
 .section-9 .container .contents .wrapper-main .grid-wrapper{
   flex-wrap: wrap
 }
+.section-2 .container .left .main-wrapper .main-contents .contents h2 {
+  font-size: 35px;
+}
+.section-2 .container .left {
+  width: 50%;
+}
+.section-2 .container .right {
+  width: 50%;
+}
+.section-3 .container {
+  flex-wrap: wrap;
+}
+.section-3 .container .link-wrapper {
+  width: 100%;
+  order: 3;
+  margin-top: 30px;
+}
+.section-3 .container .description-wrapper {
+  width: 50%;
+}
+
+.section-3 .container .link-items .link h4 {
+  margin-bottom: 5px;
+}
+.section-3 .container .description-wrapper .contents-main {
+  padding-right: 20PX;
+}
+.section-3 .container .description-wrapper p{
+  font-size: 15px;
+  line-height: 1.3em;
+  font-weight: 400;
+}
+
+}
+@media(max-width: 1100px){
+  .section-2 .container {
+    flex-direction: column-reverse;
+  }
+  .section-2 .container .right {
+    width: 100%;
+    height: 90vh;
+    padding-bottom: 20px;
+  }
+  .section-2 .container .left {
+    width: 100%;
+  }
+  
 }
 @media(max-width: 1024px){
   .section-5 .container .main-contents .contents .tabs.active{
@@ -975,6 +1026,8 @@ footer .footer-top .inner-contents .grid-items p a{
   .section-5 .container .main-contents .contents .tabs .tabs-wrapper .tabs-contents .tabs-inner-content {
     padding: 0px 200px 0px 10px;
   }
+ 
+ 
 } 
 @media(max-width: 900px){
 .section-5{
@@ -999,6 +1052,10 @@ footer .footer-top .inner-contents .grid-items p a{
 }
 }
 @media (max-width:768px) {
+  .section-1 .container .description{
+    height: 90%;
+    align-items: flex-start;
+  }
   .section-4 .container .contents .wrapper-main .wrapper {
       grid-template-columns: 1fr 1fr;
       grid-template-areas:
@@ -1018,6 +1075,24 @@ footer .footer-top .inner-contents .grid-items p a{
       width: 100%;
       text-align: center;
   }
+  .section-2 .container .left .main-wrapper .main-contents .contents h2 {
+    font-size: 30px;
+  }
+  .section-2 .container {
+    padding: 0;
+  }
+  .section-2{
+    margin: 60px 0px 0px 0px;
+  }
+  .section-2 .container .right {
+    height: 75vh;
+  }
+  .section-3 .container .description-wrapper {
+    width: 100%;
+  }
+  .section-3 {
+    margin-bottom: 80px;
+  }
 }
 @media (max-width:680px) {
   footer .footer-top .inner-contents .footer-heading {
@@ -1031,4 +1106,15 @@ footer .footer-top .inner-contents .grid-items {
 footer .footer-top {
     padding-left: 30px;
 }
+.section-2 .container .left .main-wrapper .main-contents .contents h2 {
+  font-size: 21px;
+}
+.section-2 .container .right {
+  height: 55vh;
+}
+}
+@media (max-width:480px){
+  .section-2 .container .right {
+    height: 35vh;
+  }
 }
