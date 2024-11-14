@@ -153,3 +153,34 @@ slidingItems.forEach((item)=>{
     this.classList.add('active')
   })
 })
+
+
+
+//carousel with description
+const wrapper3=document.getElementById('carousel-2')
+const bullet3=document.querySelector('.bullets')
+const bulletChild=Array.from(bullet3.children)
+
+const slide3=Array.from(wrapper3.children)
+console.log(slide3);
+let index3=0;
+function updateCarousle(){
+    slide3.forEach((slide)=>{
+        slide.classList.remove('active')
+    })
+    bulletChild.forEach((bullet)=>{
+        bullet.classList.remove('active')
+    })
+    
+    slide3[index3].classList.add('active')
+    bulletChild[index3].classList.add('active')
+    slideWidth=slide3[index3].getBoundingClientRect().width
+    
+    wrapper3.style.transform=`translateX(-${index3*slideWidth}px)`
+
+    index3=(index3+1)%slide3.length;
+    console.log(index3);
+    
+    
+}
+let descriptionSliding=setInterval(updateCarousle,3000)
