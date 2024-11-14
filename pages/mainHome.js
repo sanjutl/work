@@ -184,3 +184,32 @@ function updateCarousle(){
     
 }
 let descriptionSliding=setInterval(updateCarousle,3000)
+
+
+
+
+//lazy-2
+
+let imageItems2=document.querySelectorAll(".inner-wrapper > .image-container")
+console.log(imageItems2);
+
+
+
+let options2={
+    rootMargin:'0px',
+    threshold:0.1
+}
+
+let setActiveItems2=(entries)=>{
+    entries.forEach(element => {
+        if(element.isIntersecting){
+            element.target.classList.add('active')
+        }        
+    });
+}
+
+let observer2= new IntersectionObserver(setActiveItems2,options2)
+
+imageItems2.forEach((item)=>{
+    observer2.observe(item)
+})
