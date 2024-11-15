@@ -62,7 +62,7 @@ const callback = (entries) => {
 const options = {
   root: null, // default is the viewport
   rootMargin: '0px',
-  threshold: 0.25 // trigger when 50% of the element is in view
+  threshold: 0.5 // trigger when 50% of the element is in view
 };
 
 // Create the observer instance

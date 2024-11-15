@@ -40,7 +40,7 @@
 .logo-content{
   font-size: 50px;
   color: red;
-  transform: translateX(-80%);
+  transform: translateX(80px);
   opacity: 0;
 }
 .logo-content.content-fade{
@@ -847,7 +847,7 @@ footer .footer-top {
 
 @keyframes bounce {
   0% {
-    transform: translatex(100);
+    transform: translatex(80px);
     opacity: 0;
   }
  
