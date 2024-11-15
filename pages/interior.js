@@ -1,4 +1,58 @@
+//nav
+let header=document.querySelector('.nav')
+let mobHeader=document.querySelector('.mob-header')
 
+function logScreenDimensions() {
+   
+    let a=window.innerWidth;
+    console.log(a);
+    
+    if(a<=1024){
+        header.style.display="none";
+        mobHeader.style.display="flex";
+        
+    }else{
+        header.style.display="block"
+        mobHeader.style.display="none";
+    }
+}
+
+logScreenDimensions();
+window.addEventListener('resize', logScreenDimensions);
+
+let navItem=document.querySelector(".nav-contents")
+let isHidden = false;
+
+function toggleDisplay() {
+    const element = document.querySelector(".nav-contents")
+    if (!isHidden) {
+        element.classList.add("active");
+        isHidden = true;
+    } else {
+        element.classList.remove("active");
+        isHidden = false;
+    }
+}
+function showSubNav() {
+    const svgItem=document.getElementById("svg")
+    const element = document.querySelector(".sub-dropdown")
+    if (!isHidden) {
+        element.classList.add("active");
+        isHidden = true;
+        svgItem.style.transform="rotate(90deg)"
+    } else {
+        element.classList.remove("active");
+        isHidden = false;
+        svgItem.style.transform="rotate(0deg)"
+    }
+}
+
+
+
+
+
+
+//
 
 let tags = document.querySelectorAll('.lazy-tags');
 let lazyimg = document.querySelectorAll('.lazy-loading');
@@ -17,30 +71,6 @@ tags.forEach((tag, index) => {
   });
 });
 
-
-// const target = document.querySelector('.section-2');
-// const bgcontainer=document.querySelector('.sub-container');
-
-
-// const options = {
-//   root: null, // Observe relative to the viewport
-//   rootMargin: '0px', // Margin around the root (e.g., "0px 0px -10% 0px")
-//   threshold: 0.3 // Trigger when 50% of the target is visible
-// };
-
-// // Create an Intersection Observer
-// const observer = new IntersectionObserver((entries)=>{
-//    entries.forEach((entry)=>{
-//     if (entry.isIntersecting){
-//       bgcontainer.style.backgroundColor='pink'
-      
-//     }else{
-//       bgcontainer.style.backgroundColor='transparent'
-//     }
-//    })
-// },options);
-
-// observer.observe(target);
 
 const bgcontainer=document.querySelector('.sub-container');
 window.addEventListener('scroll', () => {

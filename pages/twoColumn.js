@@ -1,5 +1,6 @@
 
 let header=document.querySelector('.header-part')
+
 let mobHeader=document.querySelector('.header-mob')
 
 function logScreenDimensions() {
@@ -46,3 +47,4 @@ function showSubNav() {
         svgItem.style.transform="rotate(0deg)"
     }
 }
+

@@ -8,74 +8,180 @@
   </head>
 
   <body>
-    <header>
-      <div class="nav">
-        <div class="nav-items">
-          <ul class="nav-list">
-            <li class="home">
-              <a href="../index.html">Home</a>
-              <ul class="sub-list">
-                <li><a href="">home</a></li>
-                <li><a href="">home</a></li>
-                <li><a href="">home</a></li>
-                <li><a href="">home</a></li>
-                <li><a href="">home</a></li>
+    
+    <hero>
+      <header>
+        <div class="nav">
+          <div class="nav-main-container">
+            <div class="nav-items">
+              <ul class="nav-list">
+                <li class="home">
+                  <a href="../index.html">Home</a>
+                  <ul class="sub-list">
+                    <li><a href="">home</a></li>
+                    <li><a href="">home</a></li>
+                    <li><a href="">home</a></li>
+                    <li><a href="">home</a></li>
+                    <li><a href="">home</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="">Pages</a>
+                  <ul class="sub-list">
+                    <li><a href="">home</a></li>
+                    <li><a href="">home</a></li>
+                    <li><a href="">home</a></li>
+                    <li><a href="">home</a></li>
+                    <li><a href="">home</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="">Portfolio</a>
+                  <ul class="sub-list">
+                    <li><a href="">home</a></li>
+                    <li><a href="">home</a></li>
+                    <li><a href="">home</a></li>
+                    <li><a href="">home</a></li>
+                    <li><a href="">home</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="">Blog</a>
+                  <ul class="sub-list">
+                    <li><a hsref="">home</a></li>
+                    <li><a href="">home</a></li>
+                    <li><a href="">home</a></li>
+                    <li><a href="">home</a></li>
+                    <li><a href="">home</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="">Shop</a>
+                  <ul class="sub-list">
+                    <li><a href="">home</a></li>
+                    <li><a href="">home</a></li>
+                    <li><a href="">home</a></li>
+                    <li><a href="">home</a></li>
+                    <li><a href="">home</a></li>
+                  </ul>
+                </li>
               </ul>
+            </div>
+            <div class="nav-heading">
+              <a href=""><img src="./img/Hiroshi-logo-black-1-1.png" alt="" /> </a>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="mob-header">
+        <div class="nav-mob">
+          <a href="">
+            <img src="./img/Hiroshi-logo-black-1-1.png" alt="" />
+          </a>
+          <button onclick="toggleDisplay()">
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="40"
+                class="button-svg"
+                height="40"
+                viewBox="0 0 84 84"
+              >
+                <path
+                  d="M42.5 1a41 41 0 1 1-41 41 41 41 0 0 1 41-41Z"
+                  fill="none"
+                  stroke="black"
+                  stroke-width="2"
+                  stroke-dasharray="0"
+                  stroke-dashoffset="0"
+                ></path>
+              </svg>
+            </span>
+            <span> </span>
+          </button>
+        </div>
+        <div class="nav-contents">
+          <ul>
+            <li>
+              <a href="">
+                <span style="color: black">home</span>
+              </a>
             </li>
             <li>
-              <a href="">Pages</a>
-              <ul class="sub-list">
-                <li><a href="">home</a></li>
-                <li><a href="">home</a></li>
-                <li><a href="">home</a></li>
-                <li><a href="">home</a></li>
-                <li><a href="">home</a></li>
-              </ul>
+              <a href="" onclick="showSubNav();return false">
+                <span>pages</span>
+              </a>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                width="6.5"
+                height="7.5"
+                viewBox="0 0 6.5 7.5"
+                onclick="showSubNav()"
+                id="svg"
+              >
+                <path d="m6.511 3.76-6.5 3.753V.007Z"></path>
+              </svg>
+              <div class="sub-dropdown">
+                <div class="main-wrapper">
+                  <ul class="sub-menu">
+                    <li>
+                      <a href="">
+                        <span>demo</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="">
+                        <span>demo</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="">
+                        <span>demo</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="">
+                        <span>demo</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="">
+                        <span>demo</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="">
+                        <span>demo</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="">
+                        <span>demo</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="">
+                        <span>demo</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </li>
             <li>
-              <a href="">Portfolio</a>
-              <ul class="sub-list">
-                <li><a href="">home</a></li>
-                <li><a href="">home</a></li>
-                <li><a href="">home</a></li>
-                <li><a href="">home</a></li>
-                <li><a href="">home</a></li>
-              </ul>
+              <a href="">
+                <span>blog</span>
+              </a>
             </li>
             <li>
-              <a href="">Blog</a>
-              <ul class="sub-list">
-                <li><a hsref="">home</a></li>
-                <li><a href="">home</a></li>
-                <li><a href="">home</a></li>
-                <li><a href="">home</a></li>
-                <li><a href="">home</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="">Shop</a>
-              <ul class="sub-list">
-                <li><a href="">home</a></li>
-                <li><a href="">home</a></li>
-                <li><a href="">home</a></li>
-                <li><a href="">home</a></li>
-                <li><a href="">home</a></li>
-              </ul>
+              <a href="">
+                <span>landing </span>
+              </a>
             </li>
           </ul>
         </div>
-        <div class="nav-heading">
-          <a href=""
-            ><h3>Hiroshi</h3>
-            <span>Architects</span>
-          </a>
-        </div>
-        <div class="nav-circle">
-          <button class="circle"></button>
-        </div>
       </div>
-    </header>
-    <hero>
       <div class="section-1">
         <div class="section-1-left">
           <img src="./img/h4-port-img-01.jpg" alt="" />
@@ -157,38 +263,62 @@
           </div>
         </div>
       </div>
-      <hr />
-      <div class="section-5">
-        <div class="section-5-left">
-          <h2>Hiroshi</h2>
-          <p>Architects</p>
-        </div>
-        <div class="section-5-right">
-          <table>
-            <tr>
-              <th>SOCIAL</th>
-              <th>INFO</th>
-              <th>CONTACT</th>
-            </tr>
-            <tr>
-              <td><a href="">Insta</a></td>
-              <td><a href="">Contact</a></td>
-              <td><a href="">Address</a></td>
-            </tr>
-            <tr>
-              <td><a href="">Linked In</a></td>
-              <td><a href="">Terms Of Service</a></td>
-              <td><a href="">Phone</a></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td><a href="">Studio</a></td>
-              <td><a href="">Website</a></td>
-            </tr>
-          </table>
-        </div>
-      </div>
+           
     </hero>
+    <footer>
+      <div class="footer-top">
+          <div class="inner-contents">
+            <div class="footer-heading">
+              <div class="image-container">
+                <a href=""><img src="./img/hiroshi-logo-big-2.webp" alt=""></a>
+              </div>
+            </div>
+            <div class="grid-items">
+              <div class="heading">
+                <h6>social</h6>
+              </div>
+              <p>
+                <a href="">Instagram</a>
+              </p>
+              <p>
+                <a href="">Facebook</a>
+              </p>
+              <p>
+                <a href="">Linked In</a>
+              </p>
+            </div>
+            <div class="grid-items">
+              <div class="heading">
+                <h6>Info</h6>
+              </div>
+              <p>
+                <a href="">Contact</a>
+              </p>
+              <p>
+                <a href="">Terms of Service</a>
+              </p>
+              <p>
+                <a href="">Studio</a>
+              </p>
+            </div>
+            <div class="grid-items">
+              <div class="heading">
+                <h6>Contact</h6>
+              </div>
+              <p>
+                <a href="">0000000000</a>
+              </p>
+              <p>
+                <a href="">0000000000</a>
+              </p>
+              <p>
+                <a href="">e-mail</a>
+              </p>
+            </div>
+          </div>
+          
+      </div>
+    </footer>
   </body>
   <script src="./page2.js"></script>
 </html>
