@@ -58,6 +58,10 @@ let margin = 10;
 function updateImg() {
   const slides = document.querySelectorAll(".carousel-div");
   index++;
+  if (index >= slides.length) {
+    clearInterval(intervalSliding);
+    index=0
+  }
   getIndex.innerHTML=`${index+1}`
   slides.forEach((slide) => {
     slide.classList.remove("active");
@@ -73,9 +77,7 @@ function updateImg() {
     index * slidewidth + margin
   }px,0px, 0px)`;
   wrapper.style.transition = "1s";
-  if (index === slides.length - 1) {
-    clearInterval(intervalSliding);
-  }
+  
   const nextButton = document.querySelector(".next1-btn");
   const prevButton = document.querySelector(".prev1-btn");
   nextButton.addEventListener("click", () => {
