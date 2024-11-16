@@ -533,9 +533,18 @@
 }
 .slider-index .button-items {
   display: inline-flex;
+  height: 30px;
+  width: 100px;
 }
-.slider-index .button-items .left {
-  margin-right: 10px;
+.slider-index .button-items img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.slider-index .button-items button{
+  border: none;
+  background-color: transparent;
+  margin-left: 10px;
 }
 .section-3 {
   padding: 120px 100px 55px 100px;

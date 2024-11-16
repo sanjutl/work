@@ -40,12 +40,12 @@
 .logo-content{
   font-size: 50px;
   color: red;
-  transform: translateX(80px);
+  transform: translateX(-80px);
   opacity: 0;
 }
 .logo-content.content-fade{
   opacity: 1;
-  animation: bounce 5s ease-out;
+  animation: bounce 3s ease-out;
 }
 .section-1 {
   width: 95%;
@@ -213,6 +213,29 @@
   min-height: 400px;
   padding-bottom: 20px;
 }
+.carousel-container .button-div{
+  height: 30px;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding-right: 80px;
+}
+.carousel-container .button-div button span{
+  height: auto;
+  width: 30px;
+  display: inline-block;
+}
+.carousel-container .button-div button{
+  background-color: transparent;
+  border: none;
+  margin-left:10px ;
+}
+.carousel-container .button-div img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
 
 .carousel-wrapper {
   display: flex;
@@ -225,25 +248,6 @@
   transition: opacity 1s ease-in-out;
 }
 
-.samebutton {
-  position: absolute;
-  top: 100%;
-  transform: translateY(-60%);
-  padding: 10px;
-  cursor: pointer;
-  z-index: 10;
-  border: none;
-  height: 40px;
-  width: 40px;
-  background-color: transparent;
-}
-.next-btn {
-  left: 85%;
-}
-
-.prev-btn {
-  right: 11%;
-}
 .para-3 {
   width: 90%;
   font-size: 38px;
@@ -327,6 +331,29 @@
   position: relative;
   min-height: 400px;
   padding-bottom: 20px;
+}
+.mini-carousel-container .button-div{
+  height: 30px;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding-right: 80px;
+}
+  .mini-carousel-container .button-div button span{
+  height: auto;
+  width: 30px;
+  display: inline-block;
+}
+.mini-carousel-container .button-div button{
+  background-color: transparent;
+  border: none;
+  margin-left:10px ;
+}
+.mini-carousel-container .button-div img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 .mini-carousel-wrapper {
@@ -643,6 +670,12 @@ footer .footer-top .inner-contents .grid-items p a{
     min-width: 70%;
     min-height: 50vh;
   }
+  .carousel-container .button-div{
+    padding-right: 20px;
+  }
+  .mini-carousel-container .button-div{
+    padding-right: 20px;
+  }
 }
 
 @media (max-width: 826px) {
@@ -812,6 +845,12 @@ footer .footer-top .inner-contents .grid-items p a{
     width: 100%;
     padding:10px;
   }
+  .carousel-container .button-div{
+    padding-right: 0px;
+  }
+  .mini-carousel-container .button-div{
+    padding-right: 0px;
+  }
 }
 @media (max-width:769px) {
   footer .footer-top .inner-contents {
@@ -847,14 +886,22 @@ footer .footer-top {
 
 @keyframes bounce {
   0% {
-    transform: translatex(80px);
+    transform: translatex(-80px);
     opacity: 0;
   }
  
-  50%{
-    transform: translateX(0%);
+  25%{
+    transform: translateX(0px);
     opacity: 1;
-  } 
+  }
+  50%{
+    transform: translateX(0px);
+    opacity: 0.5;
+  }
+  75%{
+    transform: translateX(0px);
+    opacity: 0.2;
+  }
   100%{
     transform: translateX(0);
     opacity: 0;

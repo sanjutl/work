@@ -74,6 +74,210 @@ const target = document.querySelector('.logo-content');
 // Start observing the target element
 contentobserver.observe(target);
 })
+// 1st carousel
+
+document.addEventListener("DOMContentLoaded", function () {
+  const wrapper=document.querySelector('.carousel-wrapper')
+  console.log(wrapper);
+  
+  let slides=document.querySelectorAll('.carousel-item')
+  const firstClone=slides[0].cloneNode(true)
+  firstClone.id='first-clone';
+wrapper.append(firstClone)
+let index=0
+function updateImg(){
+  let slides=document.querySelectorAll('.carousel-item')
+  
+
+index++
+
+slideWidth=slides[index].getBoundingClientRect().width;
+wrapper.style.transform=`translateX(-${index*slideWidth}px)`;
+wrapper.style.transition='1s'
+
+}
+wrapper.addEventListener('transitionend',()=>{
+  let slides=document.querySelectorAll('.carousel-item')
+  if(slides[index].id===firstClone.id){
+    wrapper.style.transition='none'
+    index=0
+    wrapper.style.transform=`translateX(-${index*slideWidth}px)`;
+  }
+  
+})
+const nextButton = document.querySelector('.next-btn');
+const prevButton = document.querySelector('.prev-btn');
+nextButton.addEventListener('click', () => {
+  clearInterval(sliding); // Stop auto-sliding
+  index++;
+  if (index >= slides.length) {
+    index = 0;
+  }
+  wrapper.style.transform = `translateX(-${index * slideWidth}px)`;
+  wrapper.style.transition = '1s';
+  sliding = setInterval(updateImg, 3000); // Restart auto-sliding
+});
+prevButton.addEventListener('click', () => {
+  clearInterval(sliding); // Stop auto-sliding
+  index--;
+  if (index < 0) {
+    index = slides.length - 1;
+  }
+  wrapper.style.transform = `translateX(-${index * slideWidth}px)`;
+  wrapper.style.transition = '1s';
+  sliding = setInterval(updateImg, 3000); // Restart auto-sliding
+});
+wrapper.addEventListener('touchstart', (e) => {
+  clearInterval(sliding); // Stop auto-sliding
+  startX = e.touches[0].clientX;
+  isSwiping = true;
+});
+wrapper.addEventListener('touchmove', (e) => {
+  if (!isSwiping) return;
+  currentX = e.touches[0].clientX;
+  const deltaX = currentX - startX;
+
+  // Move wrapper with the touch
+  wrapper.style.transform = `translateX(calc(-${index * slideWidth}px + ${deltaX}px))`;
+  wrapper.style.transition = 'none';
+});
+wrapper.addEventListener('touchend', (e) => {
+  if (!isSwiping) return;
+  isSwiping = false;
+
+  const deltaX = currentX - startX;
+  const threshold = slideWidth / 4; // Minimum distance to trigger a slide change
+
+  if (deltaX > threshold) {
+    // Swipe right (previous slide)
+    index = index > 0 ? index - 1 : slides.length - 2;
+  } else if (deltaX < -threshold) {
+    // Swipe left (next slide)
+    index = index < slides.length - 1 ? index + 1 : 0;
+  }
+
+  wrapper.style.transform = `translateX(-${index * slideWidth}px)`;
+  wrapper.style.transition = '1s';
+
+  // Restart auto-sliding
+  sliding = setInterval(updateImg, 3000);
+});
+let sliding=setInterval(updateImg,3000)
+})
+
+
+
+//2nd carousel
+
+document.addEventListener("DOMContentLoaded", function () {
+  const wrapper=document.querySelector('.mini-carousel-wrapper')
+  console.log(wrapper);
+  
+  let slides=document.querySelectorAll('.mini-carousel-item')
+  const firstClone=slides[0].cloneNode(true)
+  firstClone.id='first-clone';
+wrapper.append(firstClone)
+let index=0
+function updateImg(){
+  let slides=document.querySelectorAll('.mini-carousel-item')
+  
+
+index++
+
+slideWidth=slides[index].getBoundingClientRect().width;
+wrapper.style.transform=`translateX(-${index*slideWidth}px)`;
+wrapper.style.transition='1s'
+
+}
+wrapper.addEventListener('transitionend',()=>{
+  let slides=document.querySelectorAll('.mini-carousel-item')
+  if(slides[index].id===firstClone.id){
+    wrapper.style.transition='none'
+    index=0
+    wrapper.style.transform=`translateX(-${index*slideWidth}px)`;
+  }
+  
+})
+const nextButton = document.querySelector('.next1-btn');
+const prevButton = document.querySelector('.prev1-btn');
+nextButton.addEventListener('click', () => {
+  clearInterval(sliding); // Stop auto-sliding
+  index++;
+  if (index >= slides.length) {
+    index = 0;
+  }
+  wrapper.style.transform = `translateX(-${index * slideWidth}px)`;
+  wrapper.style.transition = '1s';
+  sliding = setInterval(updateImg, 3000); // Restart auto-sliding
+});
+prevButton.addEventListener('click', () => {
+  clearInterval(sliding); // Stop auto-sliding
+  index--;
+  if (index < 0) {
+    index = slides.length - 1;
+  }
+  wrapper.style.transform = `translateX(-${index * slideWidth}px)`;
+  wrapper.style.transition = '1s';
+  sliding = setInterval(updateImg, 3000); // Restart auto-sliding
+});
+
+wrapper.addEventListener('touchstart', (e) => {
+  clearInterval(sliding); // Stop auto-sliding
+  startX = e.touches[0].clientX;
+  isSwiping = true;
+});
+wrapper.addEventListener('touchmove', (e) => {
+  if (!isSwiping) return;
+  currentX = e.touches[0].clientX;
+  const deltaX = currentX - startX;
+
+  // Move wrapper with the touch
+  wrapper.style.transform = `translateX(calc(-${index * slideWidth}px + ${deltaX}px))`;
+  wrapper.style.transition = 'none';
+});
+wrapper.addEventListener('touchend', (e) => {
+  if (!isSwiping) return;
+  isSwiping = false;
+
+  const deltaX = currentX - startX;
+  const threshold = slideWidth / 4; // Minimum distance to trigger a slide change
+
+  if (deltaX > threshold) {
+    // Swipe right (previous slide)
+    index = index > 0 ? index - 1 : slides.length - 2;
+  } else if (deltaX < -threshold) {
+    // Swipe left (next slide)
+    index = index < slides.length - 1 ? index + 1 : 0;
+  }
+
+  wrapper.style.transform = `translateX(-${index * slideWidth}px)`;
+  wrapper.style.transition = '1s';
+
+  // Restart auto-sliding
+  sliding = setInterval(updateImg, 3000);
+});
+
+
+let sliding=setInterval(updateImg,3000)
+})
+
+
+//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -103,149 +307,7 @@ allDiv.forEach((div) => {
   divObserver.observe(div);
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const carouselWrapper = document.querySelector(".carousel-wrapper");
-  const carouselItems = document.querySelectorAll(".carousel-item");
-  const prevBtn = document.querySelector(".prev-btn");
-  const nextBtn = document.querySelector(".next-btn");
-  const indicators = document.querySelectorAll(".indicator");
 
-  let currentIndex = 0;
-  let autoSlideInterval;
-
-  function updateCarouselPosition() {
-    const itemWidth = carouselItems[0].clientWidth;
-    const newPosition = -currentIndex * itemWidth;
-    carouselWrapper.style.transform = `translateX(${newPosition}px)`;
-
-    indicators.forEach((indicator) => indicator.classList.remove("active"));
-    indicators[currentIndex].classList.add("active");
-  }
-
-  function showNextItem() {
-    currentIndex = (currentIndex + 1) % carouselItems.length;
-    updateCarouselPosition();
-  }
-
-  function showPrevItem() {
-    currentIndex =
-      (currentIndex - 1 + carouselItems.length) % carouselItems.length;
-    updateCarouselPosition();
-  }
-
-  function jumpToSlide(index) {
-    currentIndex = index;
-    updateCarouselPosition();
-  }
-
-  nextBtn.addEventListener("click", showNextItem);
-  prevBtn.addEventListener("click", showPrevItem);
-
-  indicators.forEach((indicator, index) => {
-    indicator.addEventListener("click", () => jumpToSlide(index));
-  });
-
-  // Auto-slide functionality
-  function startAutoSlide() {
-    autoSlideInterval = setInterval(showNextItem, 3000); // Slide every 3 seconds
-  }
-
-  function stopAutoSlide() {
-    clearInterval(autoSlideInterval);
-  }
-
-  carouselWrapper.addEventListener("mouseover", stopAutoSlide);
-  carouselWrapper.addEventListener("mouseout", startAutoSlide);
-
-  startAutoSlide();
-  let startX;
-  carouselWrapper.addEventListener("touchstart", (e) => {
-    startX = e.touches[0].clientX;
-  });
-
-  carouselWrapper.addEventListener("touchend", (e) => {
-    const endX = e.changedTouches[0].clientX;
-    if (startX > endX + 50) {
-      // Swipe left
-      showNextItem();
-    } else if (startX < endX - 50) {
-      // Swipe right
-      showPrevItem();
-    }
-  });
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  const carouselWrapper = document.querySelector(".mini-carousel-wrapper");
-  const carouselItems = document.querySelectorAll(".mini-carousel-item");
-  const prevBtn = document.querySelector(".prev-btn");
-  const nextBtn = document.querySelector(".next-btn");
-  const indicators = document.querySelectorAll(".indicator");
-
-  let currentIndex = 0;
-  let autoSlideInterval;
-
-  function updateCarouselPosition() {
-    const itemWidth = carouselItems[0].clientWidth;
-    const newPosition = -currentIndex * itemWidth;
-    carouselWrapper.style.transform = `translateX(${newPosition}px)`;
-
-    indicators.forEach((indicator) => indicator.classList.remove("active"));
-    indicators[currentIndex].classList.add("active");
-  }
-
-  function showNextItem() {
-    currentIndex = (currentIndex + 1) % carouselItems.length;
-    updateCarouselPosition();
-  }
-
-  function showPrevItem() {
-    currentIndex =
-      (currentIndex - 1 + carouselItems.length) % carouselItems.length;
-    updateCarouselPosition();
-  }
-
-  function jumpToSlide(index) {
-    currentIndex = index;
-    updateCarouselPosition();
-  }
-
-  nextBtn.addEventListener("click", showNextItem);
-  prevBtn.addEventListener("click", showPrevItem);
-
-  indicators.forEach((indicator, index) => {
-    indicator.addEventListener("click", () => jumpToSlide(index));
-  });
-
-  // Auto-slide functionality
-  function startAutoSlide() {
-    autoSlideInterval = setInterval(showNextItem, 3000); // Slide every 3 seconds
-  }
-
-  function stopAutoSlide() {
-    clearInterval(autoSlideInterval);
-  }
-
-  carouselWrapper.addEventListener("mouseover", stopAutoSlide);
-  carouselWrapper.addEventListener("mouseout", startAutoSlide);
-
-  startAutoSlide();
-  let startX;
-  carouselWrapper.addEventListener("touchstart", (e) => {
-    startX = e.touches[0].clientX;
-  });
-
-  carouselWrapper.addEventListener("touchend", (e) => {
-    const endX = e.changedTouches[0].clientX;
-    if (startX > endX + 50) {
-      // Swipe left
-      showNextItem();
-    } else if (startX < endX - 50) {
-      // Swipe right
-      showPrevItem();
-    }
-  });
-});
 
 //section 7
 

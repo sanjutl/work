@@ -146,37 +146,91 @@ function moveSlider(direction) {
 }
 
 //carousel
-const wrapper = document.querySelector(".carousel-wrapper");
-const slides = Array.from(wrapper.children);
-console.log(slides.length);
-
-let index = 0;
-let interval = 3000;
-const arrowright = document.querySelector(".fa-arrow-right");
-const arrowleft = document.querySelector(".fa-arrow-left");
-function updatePosition() {
-  slideWidth = slides[0].getBoundingClientRect().width;
-  wrapper.style.transform = `translateX(-${index * slideWidth}px)`;
-}
-
-arrowright.addEventListener("click", () => {
-  clearInterval(intervalSliding);
-  index = (index + 1) % slides.length;
-  updatePosition();
-  intervalSliding = setInterval(sliding, 4000); 
+document.addEventListener("DOMContentLoaded", function () {
+  const wrapper=document.querySelector('.carousel-wrapper')
+  console.log(wrapper);
   
-});
+  let slides=document.querySelectorAll('.carousel-image-container')
+  const firstClone=slides[0].cloneNode(true)
+  firstClone.id='first-clone';
+wrapper.append(firstClone)
+let index=0
+function updateImg(){
+  let slides=document.querySelectorAll('.carousel-image-container')
+  
 
-arrowleft.addEventListener("click", () => {
-  clearInterval(intervalSliding);
-  index = (index - 1) % slides.length;
-  updatePosition();
-  intervalSliding = setInterval(sliding, 4000);
-});
+index++
 
-function sliding() {
-  index = (index + 1) % slides.length;
-  updatePosition();
+slideWidth=slides[index].getBoundingClientRect().width;
+wrapper.style.transform=`translateX(-${index*slideWidth}px)`;
+wrapper.style.transition='1s'
+
 }
+wrapper.addEventListener('transitionend',()=>{
+  let slides=document.querySelectorAll('.carousel-image-container')
+  if(slides[index].id===firstClone.id){
+    wrapper.style.transition='none'
+    index=0
+    wrapper.style.transform=`translateX(-${index*slideWidth}px)`;
+  }
+  
+})
+const nextButton = document.querySelector('.next-btn');
+const prevButton = document.querySelector('.prev-btn');
+nextButton.addEventListener('click', () => {
+  clearInterval(sliding); // Stop auto-sliding
+  index++;
+  if (index >= slides.length) {
+    index = 0;
+  }
+  wrapper.style.transform = `translateX(-${index * slideWidth}px)`;
+  wrapper.style.transition = '1s';
+  sliding = setInterval(updateImg, 3000); // Restart auto-sliding
+});
+prevButton.addEventListener('click', () => {
+  clearInterval(sliding); // Stop auto-sliding
+  index--;
+  if (index < 0) {
+    index = slides.length - 1;
+  }
+  wrapper.style.transform = `translateX(-${index * slideWidth}px)`;
+  wrapper.style.transition = '1s';
+  sliding = setInterval(updateImg, 3000); // Restart auto-sliding
+});
+wrapper.addEventListener('touchstart', (e) => {
+  clearInterval(sliding); // Stop auto-sliding
+  startX = e.touches[0].clientX;
+  isSwiping = true;
+});
+wrapper.addEventListener('touchmove', (e) => {
+  if (!isSwiping) return;
+  currentX = e.touches[0].clientX;
+  const deltaX = currentX - startX;
 
-let intervalSliding=setInterval(sliding,3000)
+  // Move wrapper with the touch
+  wrapper.style.transform = `translateX(calc(-${index * slideWidth}px + ${deltaX}px))`;
+  wrapper.style.transition = 'none';
+});
+wrapper.addEventListener('touchend', (e) => {
+  if (!isSwiping) return;
+  isSwiping = false;
+
+  const deltaX = currentX - startX;
+  const threshold = slideWidth / 4; // Minimum distance to trigger a slide change
+
+  if (deltaX > threshold) {
+    // Swipe right (previous slide)
+    index = index > 0 ? index - 1 : slides.length - 2;
+  } else if (deltaX < -threshold) {
+    // Swipe left (next slide)
+    index = index < slides.length - 1 ? index + 1 : 0;
+  }
+
+  wrapper.style.transform = `translateX(-${index * slideWidth}px)`;
+  wrapper.style.transition = '1s';
+
+  // Restart auto-sliding
+  sliding = setInterval(updateImg, 3000);
+});
+let sliding=setInterval(updateImg,3000)
+})
