@@ -4,7 +4,7 @@ let mobHeader = document.querySelector(".mob-header");
 
 function logScreenDimensions() {
   let a = window.innerWidth;
-  console.log(a);
+
 
   if (a <= 1024) {
     header.style.display = "none";
@@ -58,9 +58,11 @@ let margin = 10;
 function updateImg() {
   const slides = document.querySelectorAll(".carousel-div");
   index++;
-  if (index >= slides.length) {
+  if (index ===slides.length) {
     clearInterval(intervalSliding);
     index=0
+    intervalSliding = setInterval(updateImg, 3000);
+
   }
   getIndex.innerHTML=`${index+1}`
   slides.forEach((slide) => {
@@ -82,25 +84,29 @@ function updateImg() {
   const prevButton = document.querySelector(".prev1-btn");
   nextButton.addEventListener("click", () => {
     clearInterval(intervalSliding);
+    index++;
     slides.forEach((slide) => {
       slide.classList.remove("active");
     });
     article.forEach((article) => {
       article.classList.remove("active");
     }); // Stop auto-sliding
-    index++;
     
-    if (index >= slides.length) {
+    
+    if (index>=slides.length) {
       index = 0;
     }
-    getIndex.innerHTML=`${index+1}`
+    
+    // getIndex.innerHTML=`${index+1}`
     slides[index].classList.add("active");
     article[index].classList.add("active");
     wrapper.style.transform = `translate3d(-${
       index * slidewidth + margin
     }px,0px, 0px)`;
     wrapper.style.transition = "1s";
-    intervalSliding = setInterval(updateImg, 3000);
+   
+    console.log('next',index);
+    
   });
   prevButton.addEventListener("click", () => {
     clearInterval(intervalSliding);
@@ -114,7 +120,8 @@ function updateImg() {
     if (index < 0) {
       index = slides.length - 1;
     }
-  getIndex.innerHTML=`${index+1}`
+    
+  // getIndex.innerHTML=`${index+1}`
 
     slides[index].classList.add("active");
     article[index].classList.add("active");
@@ -123,6 +130,7 @@ function updateImg() {
     }px,0px, 0px)`;
     wrapper.style.transition = "1s";
     intervalSliding = setInterval(updateImg, 3000);
+    console.log('pre',index);
   });
 }
 let intervalSliding = setInterval(updateImg, 3000);
@@ -132,7 +140,6 @@ const bullet = document.querySelector(".bullets");
 const bulletChild = Array.from(bullet.children);
 
 const slide2 = Array.from(wrapper2.children);
-console.log(slide2);
 let index2 = 0;
 function updateCarousle() {
   slide2.forEach((slide) => {
@@ -149,6 +156,5 @@ function updateCarousle() {
   wrapper2.style.transform = `translateX(-${index2 * slideWidth}px)`;
 
   index2 = (index2 + 1) % slide2.length;
-  console.log(index2);
 }
 let sliding = setInterval(updateCarousle, 3000);

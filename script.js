@@ -325,9 +325,9 @@ const observerCallback = (entries) => {
         let measuredScrollY = Math.max(0, window.scrollY - scrollOffset);
         console.log(window.scrollY);
         
-        document.querySelector(".scroll-container").style.transform = `translateX(${
+        document.querySelector(".scroll-container").style.transform = `translate3d(${
           measuredScrollY * -0.2
-        }px)`;
+        }px,${0}px,${0}px)`;
         document.querySelector(".scroll-container2").style.transform = `translate3d(${
           measuredScrollY * 0.2
         }px,${0}px,${0}px)`;

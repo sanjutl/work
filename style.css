@@ -409,16 +409,17 @@
   flex-direction: row;
   width: max-content;
   flex-wrap: nowrap;
-  transition: transform ease-in-out ;
+  transform: rotate(0.001deg);
   margin-bottom: 5px;
-
+transition-duration: 1000ms;
 }
 .scroll-container2 {
   display: flex;
   flex-direction: row;
   width: max-content;
   flex-wrap: nowrap;
-  transition: transform ease-in-out ;
+  transform: rotate(0.001deg);
+  transition-duration: 1000ms;
   margin: 5px;
 }
 .orginal {
