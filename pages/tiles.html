@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./tiles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="nav">
+        <div class="nav-main-container">
+          <div class="nav-items">
+            <ul class="nav-list">
+              <li class="home">
+                <a href="../index.html">Home</a>
+                <ul class="sub-list">
+                  <li><a href="">home</a></li>
+                  <li><a href="">home</a></li>
+                  <li><a href="">home</a></li>
+                  <li><a href="">home</a></li>
+                  <li><a href="">home</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="">Pages</a>
+                <ul class="sub-list">
+                  <li><a href="">home</a></li>
+                  <li><a href="">home</a></li>
+                  <li><a href="">home</a></li>
+                  <li><a href="">home</a></li>
+                  <li><a href="">home</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="">Portfolio</a>
+                <ul class="sub-list">
+                  <li><a href="">home</a></li>
+                  <li><a href="">home</a></li>
+                  <li><a href="">home</a></li>
+                  <li><a href="">home</a></li>
+                  <li><a href="">home</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="">Blog</a>
+                <ul class="sub-list">
+                  <li><a hsref="">home</a></li>
+                  <li><a href="">home</a></li>
+                  <li><a href="">home</a></li>
+                  <li><a href="">home</a></li>
+                  <li><a href="">home</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="">Shop</a>
+                <ul class="sub-list">
+                  <li><a href="">home</a></li>
+                  <li><a href="">home</a></li>
+                  <li><a href="">home</a></li>
+                  <li><a href="">home</a></li>
+                  <li><a href="">home</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="nav-heading">
+            <a href=""><img src="./img/Hiroshi-logo-white.png" alt="" /> </a>
+          </div>
+        </div>
+      </div>
+      <div class="mob-header">
+        <div class="nav-mob">
+          <a href="">
+            <img src="./img/Hiroshi-logo-black-1-1.png" alt="" />
+          </a>
+          <button onclick="toggleDisplay()">
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="40"
+                class="button-svg"
+                height="40"
+                viewBox="0 0 84 84"
+              >
+                <path
+                  d="M42.5 1a41 41 0 1 1-41 41 41 41 0 0 1 41-41Z"
+                  fill="none"
+                  stroke="black"
+                  stroke-width="2"
+                  stroke-dasharray="0"
+                  stroke-dashoffset="0"
+                ></path>
+              </svg>
+            </span>
+            <span> </span>
+          </button>
+        </div>
+        <div class="nav-contents">
+          <ul>
+            <li>
+              <a href="">
+                <span style="color: black">home</span>
+              </a>
+            </li>
+            <li>
+              <a href="" onclick="showSubNav();return false">
+                <span>pages</span>
+              </a>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                width="6.5"
+                height="7.5"
+                viewBox="0 0 6.5 7.5"
+                onclick="showSubNav()"
+                id="svg"
+              >
+                <path d="m6.511 3.76-6.5 3.753V.007Z"></path>
+              </svg>
+              <div class="sub-dropdown">
+                <div class="main-wrapper">
+                  <ul class="sub-menu">
+                    <li>
+                      <a href="">
+                        <span>demo</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="">
+                        <span>demo</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="">
+                        <span>demo</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="">
+                        <span>demo</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="">
+                        <span>demo</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="">
+                        <span>demo</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="">
+                        <span>demo</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="">
+                        <span>demo</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a href="">
+                <span>blog</span>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <span>landing </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <hero>
+      <div class="section-1">
+        <div class="container">
+          <div class="wrapper">
+            <div class="info-container active">
+              <div class="info-contents">
+                <div class="heading">
+                  <h4>Demo items1</h4>
+                </div>
+                <div class="text">
+                  <p>Demo items</p>
+                </div>
+              </div>
+              <div class="info-contents">
+                <div class="heading">
+                  <h4>Demo items2</h4>
+                </div>
+                <div class="text">
+                  <p>Demo items</p>
+                </div>
+              </div>
+            </div>
+            <div class="image-container-swipper active">
+              <img src="./img/home-6-img-1.jpg" alt="" />
+            </div>
+            <div class="image-container-swipper">
+              <img src="./img/home-12-img-1-2048x1152.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </hero>
+    <div class="product-container">
+      <div class="product-card">
+          <img src="./img/tiles1.jpg" alt="Product Image">
+          <div class="add-to-cart">+ Add to Cart</div>
+          <div class="product-info">
+              <div class="product-name">Product 1</div>
+              <div class="product-price">$19.99</div>
+          </div>
+      </div>
+
+
+      <div class="product-card">
+          <img src="./img/tiles1.jpg"  alt="Product Image">
+          <div class="add-to-cart">+ Add to Cart</div>
+          <div class="product-info">
+              <div class="product-name">Product 2</div>
+              <div class="product-price">$29.99</div>
+          </div>
+      </div>
+
+      <div class="product-card">
+          <img src="./img/tiles1.jpg"  alt="Product Image">
+          <div class="add-to-cart">+ Add to Cart</div>
+          <div class="product-info">
+              <div class="product-name">Product 3</div>
+              <div class="product-price">$39.99</div>
+          </div>
+      </div>
+
+      <div class="product-card">
+          <img src="./img/tiles1.jpg"  alt="Product Image">
+          <div class="add-to-cart">+ Add to Cart</div>
+          <div class="product-info">
+              <div class="product-name">Product 4</div>
+              <div class="product-price">$49.99</div>
+          </div>
+      </div>
+
+      <div class="product-card">
+          <img src="./img/tiles1.jpg"  alt="Product Image">
+          <div class="add-to-cart">+ Add to Cart</div>
+          <div class="product-info">
+              <div class="product-name">Product 5</div>
+              <div class="product-price">$59.99</div>
+          </div>
+      </div>
+
+      <div class="product-card">
+          <img src="./img/tiles1.jpg"  alt="Product Image">
+          <div class="add-to-cart">+ Add to Cart</div>
+          <div class="product-info">
+              <div class="product-name">Product 6</div>
+              <div class="product-price">$69.99</div>
+          </div>
+      </div>
+
+      <div class="product-card">
+          <img src="./img/tiles1.jpg"  alt="Product Image">
+          <div class="add-to-cart">+ Add to Cart</div>
+          <div class="product-info">
+              <div class="product-name">Product 7</div>
+              <div class="product-price">$79.99</div>
+          </div>
+      </div>
+
+      <div class="product-card">
+          <img src="./img/tiles1.jpg"  alt="Product Image">
+          <div class="add-to-cart">+ Add to Cart</div>
+          <div class="product-info">
+              <div class="product-name">Product 8</div>
+              <div class="product-price">$89.99</div>
+          </div>
+      </div>
+  </div>
+
+      <section class="latest-trends">
+        <h2>Latest Trends and News</h2>
+        
+        <div class="content-row">
+            <div class="content-card">
+                <img src="./img/tiles2-1.jpg" alt="Kitchen Design">
+                <div class="content-info">
+                    <h3>Studio Hiroshi Offers Incredible Tiles Design For Your Kitchen</h3>
+                    
+                </div>
+            </div>
+
+            <div class="content-card">
+                <img src="./img/tiles2-2.jpg" alt="Bathroom Renovation">
+                <div class="content-info">
+                    <h3>Inspiring Ideas For Your Next Bathroom Renovation</h3>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="content-wrapper">
+      <div class="three-section-container">
+          <div class="section image-section">
+              <img src="./img/tiles3-1.jpg" alt="Image 1">
+          </div>
+          <div class="section text-section">
+              <p>Following the best world trends of the great masters, our furniture stands out<br>
+              <a href="#">View All</a></p>
+          </div>
+          <div class="section image-section">
+              <img src="./img/tiles3-2.jpg" alt="Image 2">
+          </div>
+      </div>
+  </div>
+    <footer>
+      <div class="footer-top">
+        <div class="inner-contents">
+          <div class="footer-heading">
+            <div class="image-container">
+              <a href=""><img src="./img/hiroshi-logo-big-2.webp" alt="" /></a>
+            </div>
+          </div>
+          <div class="grid-items">
+            <div class="heading">
+              <h6>social</h6>
+            </div>
+            <p>
+              <a href="">Instagram</a>
+            </p>
+            <p>
+              <a href="">Facebook</a>
+            </p>
+            <p>
+              <a href="">Linked In</a>
+            </p>
+          </div>
+          <div class="grid-items">
+            <div class="heading">
+              <h6>Info</h6>
+            </div>
+            <p>
+              <a href="">Contact</a>
+            </p>
+            <p>
+              <a href="">Terms of Service</a>
+            </p>
+            <p>
+              <a href="">Studio</a>
+            </p>
+          </div>
+          <div class="grid-items">
+            <div class="heading">
+              <h6>Contact</h6>
+            </div>
+            <p>
+              <a href="">0000000000</a>
+            </p>
+            <p>
+              <a href="">0000000000</a>
+            </p>
+            <p>
+              <a href="">e-mail</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="./tile.js"></script>
+  </body>
+</html>
