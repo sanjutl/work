@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expandable Portfolio</title>
+    <link rel="stylesheet" href="portfoliosecond.css">
+</head>
+<body>
+    <header>
+        <div class="nav">
+          <div class="nav-main-container">
+            <div class="nav-items">
+              <ul class="nav-list">
+                <li class="home">
+                  <a href="../index.html">Home</a>
+                  <ul class="sub-list">
+                    <li><a href="">home</a></li>
+                    <li><a href="">home</a></li>
+                    <li><a href="">home</a></li>
+                    <li><a href="">home</a></li>
+                    <li><a href="">home</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="">Pages</a>
+                  <ul class="sub-list">
+                    <li><a href="">home</a></li>
+                    <li><a href="">home</a></li>
+                    <li><a href="">home</a></li>
+                    <li><a href="">home</a></li>
+                    <li><a href="">home</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="">Portfolio</a>
+                  <ul class="sub-list">
+                    <li><a href="">home</a></li>
+                    <li><a href="">home</a></li>
+                    <li><a href="">home</a></li>
+                    <li><a href="">home</a></li>
+                    <li><a href="">home</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="">Blog</a>
+                  <ul class="sub-list">
+                    <li><a hsref="">home</a></li>
+                    <li><a href="">home</a></li>
+                    <li><a href="">home</a></li>
+                    <li><a href="">home</a></li>
+                    <li><a href="">home</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="">Shop</a>
+                  <ul class="sub-list">
+                    <li><a href="">home</a></li>
+                    <li><a href="">home</a></li>
+                    <li><a href="">home</a></li>
+                    <li><a href="">home</a></li>
+                    <li><a href="">home</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="nav-heading">
+              <a href=""><img src="./img/Hiroshi-logo-black-1-1.png" alt="" /> </a>
+            </div>
+          </div>
+        </div>
+        <div class="mob-header">
+          <div class="nav-mob">
+            <a href="">
+              <img src="./img/Hiroshi-logo-black-1-1.png" alt="" />
+            </a>
+            <button onclick="toggleDisplay()">
+              <span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="40"
+                  class="button-svg"
+                  height="40"
+                  viewBox="0 0 84 84"
+                >
+                  <path
+                    d="M42.5 1a41 41 0 1 1-41 41 41 41 0 0 1 41-41Z"
+                    fill="none"
+                    stroke="black"
+                    stroke-width="2"
+                    stroke-dasharray="0"
+                    stroke-dashoffset="0"
+                  ></path>
+                </svg>
+              </span>
+              <span> </span>
+            </button>
+          </div>
+          <div class="nav-contents">
+            <ul>
+              <li>
+                <a href="">
+                  <span style="color: black">home</span>
+                </a>
+              </li>
+              <li>
+                <a href="" onclick="showSubNav();return false">
+                  <span>pages</span>
+                </a>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  width="6.5"
+                  height="7.5"
+                  viewBox="0 0 6.5 7.5"
+                  onclick="showSubNav()"
+                  id="svg"
+                >
+                  <path d="m6.511 3.76-6.5 3.753V.007Z"></path>
+                </svg>
+                <div class="sub-dropdown">
+                  <div class="main-wrapper">
+                    <ul class="sub-menu">
+                      <li>
+                        <a href="">
+                          <span>demo</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="">
+                          <span>demo</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="">
+                          <span>demo</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="">
+                          <span>demo</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="">
+                          <span>demo</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="">
+                          <span>demo</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="">
+                          <span>demo</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="">
+                          <span>demo</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <a href="">
+                  <span>blog</span>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <span>landing </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </header> 
+<div class="bigWrapper">
+    <div class="Mycontainer">
+        <!-- Item 1 -->
+        <div class="item" onclick="toggleExpand(this)">
+            <div class="title">
+                <h3>Mapping Historical New York City</h3>
+                <span class="meta">CIVIC BUILDINGS, HOUSING, URBANISM</span>
+                <span class="year">2022</span>
+            </div>
+            <div class="details">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <img src="./img/ps1.jpg" alt="Mapping Historical New York City">
+              
+            </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="item" onclick="toggleExpand(this)">
+            <div class="title">
+                <h3>Houses in the Mountain in Cantabria</h3>
+                <span class="meta">HOUSING</span>
+                <span class="year">2021</span>
+            </div>
+            <div class="details">
+                <p>Short description about the project. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <img src="./img/ps2.jpg" alt="Houses in the Mountain in Cantabria">
+      
+            </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="item" onclick="toggleExpand(this)">
+            <div class="title">
+                <h3>A Modest Family House</h3>
+                <span class="meta">CIVIC BUILDINGS</span>
+                <span class="year">2021</span>
+            </div>
+            <div class="details">
+                <p>Explore this simple yet elegant family house design in a suburban area.</p>
+                <img src="./img/ps3.jpg" alt="A Modest Family House">
+                
+            </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="item" onclick="toggleExpand(this)">
+            <div class="title">
+                <h3>Architectural Research Center</h3>
+                <span class="meta">CIVIC BUILDINGS, URBANISM</span>
+                <span class="year">2020</span>
+            </div>
+            <div class="details">
+                <p>A cutting-edge architectural research center designed to inspire innovation.</p>
+                <img src="./img/ps4.jpg" alt="Architectural Research Center">
+                
+            </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="item" onclick="toggleExpand(this)">
+            <div class="title">
+                <h3>Photo Studio Anrea Lorenzo</h3>
+                <span class="meta">BUSINESS BUILDINGS</span>
+                <span class="year">2019</span>
+            </div>
+            <div class="details">
+                <p>A state-of-the-art photo studio designed for professional photographers.</p>
+                <img src="./img/ps5.jpg" alt="Photo Studio Anrea Lorenzo">
+                
+            </div>
+        </div>
+
+        <!-- Item 6 -->
+        <div class="item" onclick="toggleExpand(this)">
+            <div class="title">
+                <h3>Co-working Space Bangkok</h3>
+                <span class="meta">CIVIC BUILDINGS, HOUSING, URBANISM</span>
+                <span class="year">2018</span>
+            </div>
+            <div class="details">
+                <p>A modern co-working space in Bangkok fostering creativity and collaboration.</p>
+                <img src="./img/ps6.jpg" alt="Co-working Space Bangkok">
+             
+            </div>
+        </div>
+
+        <!-- Item 7 -->
+        <div class="item" onclick="toggleExpand(this)">
+            <div class="title">
+                <h3>Retreat House in Finland</h3>
+                <span class="meta">BUSINESS BUILDINGS, HOUSING</span>
+                <span class="year">2018</span>
+            </div>
+            <div class="details">
+                <p>A peaceful retreat house surrounded by the serene Finnish landscape.</p>
+                <img src="./img/ps7.jpg" alt="Retreat House in Finland">
+                
+            </div>
+        </div>
+
+        <!-- Item 8 -->
+        <div class="item" onclick="toggleExpand(this)">
+            <div class="title">
+                <h3>Brutalist Home in Berlin</h3>
+                <span class="meta">CIVIC BUILDINGS, URBANISM</span>
+                <span class="year">2020</span>
+            </div>
+            <div class="details">
+                <p>Brutalist architecture at its finest in the heart of Berlin.</p>
+                <img src="./img/ps8.jpg" alt="Brutalist Home in Berlin">
+                
+            </div>
+        </div>
+    </div>
+    <div class="right-column">
+        <h1>HiroshiArchitects</h1>
+        
+        <div class="enquiries">
+            <p>ENQUIRIES:</p>
+            <p><a href="mailto:hiroshiarchitects@qodeinteractive.com">hiroshiarchitects@qodeinteractive.com</a></p>
+            <p>36 Northgate Way Stoke, North Shore 1011 New Zealand</p>
+        </div>
+    </div>
+</div>
+    <script src="portfol.js"></script>
+</body>
+</html>
